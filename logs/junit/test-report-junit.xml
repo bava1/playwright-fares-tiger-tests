@@ -1,0 +1,286 @@
+<testsuites id="" name="" tests="12" failures="8" skipped="3" errors="0" time="24.027948999999996">
+<testsuite name="examples\example.spec.ts" timestamp="2025-04-01T09:15:35.656Z" hostname="chromium" tests="7" failures="4" skipped="2" time="30.149" errors="0">
+<testcase name="example test" classname="examples\example.spec.ts" time="2.732">
+<failure message="example.spec.ts:3:5 example test" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:3:5 › example test ─────────────────────────────────────────
+
+    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv/
+    Call log:
+      - navigating to "https://playwright.deg456789gv/", waiting until "load"
+
+
+      2 |
+      3 | test('example test', async ({ page }) => {
+    > 4 |   await page.goto('https://playwright.deg456789gv');
+        |              ^
+      5 |   await expect(page).toHaveTitle(/Playwright/);
+      6 | });
+      7 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:4:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\examples-example-example-test-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\examples-example-example-test-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="test get started link 45" classname="examples\example.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="test started link" classname="examples\example.spec.ts" time="3.149">
+</testcase>
+<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="8.095">
+<failure message="example.spec.ts:20:5 test fasfasf get 3" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:20:5 › test fasfasf get 3 ──────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
+
+
+      21 |   await page.goto('https://playwright.dev');
+      22 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 23 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+         |                                                                       ^
+      24 | });
+      25 |
+      26 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:23:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\examples-example-test-fasfasf-get-3-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\examples-example-test-fasfasf-get-3-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get test started link 39 adfagfsadgsadg " classname="examples\example.spec.ts" time="8.211">
+<failure message="example.spec.ts:26:5 get test started link 39 adfagfsadgsadg " type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:26:5 › get test started link 39 adfagfsadgsadg  ────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Igggggnst' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Igggggnst' })
+
+
+      27 |   await page.goto('https://playwright.dev');
+      28 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 29 |   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
+         |                                                                  ^
+      30 | });
+      31 |
+      32 | test('test prooo  link 2', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:66
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\examples-example-get-test-started-link-39-adfagfsadgsadg--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\examples-example-get-test-started-link-39-adfagfsadgsadg--chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="7.962">
+<failure message="example.spec.ts:32:5 test prooo  link 2" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:32:5 › test prooo  link 2 ──────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
+
+
+      33 |   await page.goto('https://playwright.dev');
+      34 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 35 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
+         |                                                                              ^
+      36 | });
+      37 |
+      38 | test.skip('get started link 5', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:35:78
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\examples-example-test-prooo-link-2-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\examples-example-test-prooo-link-2-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get started link 5" classname="examples\example.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="permiset\navigation.spec.ts" timestamp="2025-04-01T09:15:35.656Z" hostname="chromium" tests="5" failures="4" skipped="1" time="54.3" errors="0">
+<testcase name="PermiSET Navigation › Go to homepage" classname="permiset\navigation.spec.ts" time="7.068">
+<failure message="navigation.spec.ts:24:9 Go to homepage" type="FAILURE">
+<![CDATA[  [chromium] › permiset\navigation.spec.ts:24:9 › PermiSET Navigation › Go to homepage ─────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+    Locator: locator(':root')
+    Expected string: "https://permiset-client-1.vercel.app/"
+    Received string: "https://permiset-client-1.vercel.app/auth/login"
+    Call log:
+      - expect.toHaveURL with timeout 5000ms
+      - waiting for locator(':root')
+        9 × locator resolved to <html lang="en">…</html>
+          - unexpected value "https://permiset-client-1.vercel.app/auth/login"
+
+
+      24 |     test('Go to homepage', async () => {
+      25 |         await page.waitForTimeout(2000);
+    > 26 |         await expect(page).toHaveURL(`${clientURL}`);
+         |                            ^
+      27 |     });
+      28 |
+      29 |     test('left navigation', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:26:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\permiset-navigation-PermiSET-Navigation-Go-to-homepage-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\permiset-navigation-PermiSET-Navigation-Go-to-homepage-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="PermiSET Navigation › left navigation" classname="permiset\navigation.spec.ts" time="17.076">
+<failure message="navigation.spec.ts:29:9 left navigation" type="FAILURE">
+<![CDATA[  [chromium] › permiset\navigation.spec.ts:29:9 › PermiSET Navigation › left navigation ────────────
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Dashboard' })
+
+
+      29 |     test('left navigation', async () => {
+      30 |         await page.waitForTimeout(2000);
+    > 31 |         await page.getByRole('button', { name: 'Dashboard' }).click();
+         |                                                               ^
+      32 |         await expect(page).toHaveURL(`${clientURL}/dashboard`);
+      33 |         await page.getByRole('button', { name: 'Users' }).click();
+      34 |         await expect(page).toHaveURL(`${clientURL}/users`);
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:31:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\permiset-navigation-PermiSET-Navigation-left-navigation-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\permiset-navigation-PermiSET-Navigation-left-navigation-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="PermiSET Navigation › right navigation" classname="permiset\navigation.spec.ts" time="15.078">
+<failure message="navigation.spec.ts:47:9 right navigation" type="FAILURE">
+<![CDATA[  [chromium] › permiset\navigation.spec.ts:47:9 › PermiSET Navigation › right navigation ───────────
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Sethgtings' })
+
+
+      46 |
+      47 |     test('right navigation', async () => {
+    > 48 |         await page.getByRole('button', { name: 'Sethgtings' }).click();
+         |                                                                ^
+      49 |         await expect(page).toHaveURL(`${clientURL}/setting`);
+      50 |     });
+      51 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:48:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\permiset-navigation-PermiSET-Navigation-right-navigation-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\permiset-navigation-PermiSET-Navigation-right-navigation-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="PermiSET Navigation › skippp   right navigation" classname="permiset\navigation.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="PermiSET Navigation › Go logout" classname="permiset\navigation.spec.ts" time="15.078">
+<failure message="navigation.spec.ts:57:9 Go logout" type="FAILURE">
+<![CDATA[  [chromium] › permiset\navigation.spec.ts:57:9 › PermiSET Navigation › Go logout ──────────────────
+
+    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Home' })
+
+
+      56 |
+      57 |     test('Go logout', async () => {
+    > 58 |         await page.getByRole('button', { name: 'Home' }).click();
+         |                                                          ^
+      59 |         await expect(page).toHaveURL(`${clientURL}`);
+      60 |     });
+      61 | });
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:58:58
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\permiset-navigation-PermiSET-Navigation-Go-logout-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\permiset-navigation-PermiSET-Navigation-Go-logout-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,147 @@
+{
+  "stats": {
+    "total": 12,
+    "passed": 1,
+    "failed": 8,
+    "skipped": 3,
+    "duration": 24041
+  },
+  "suites": [
+    {
+      "id": "examples\\example.spec.ts:test get started link 45",
+      "title": "test get started link 45",
+      "specs": [],
+      "status": "skipped",
+      "duration": 0,
+      "retry": 0
+    },
+    {
+      "id": "examples\\example.spec.ts:get started link 5",
+      "title": "get started link 5",
+      "specs": [],
+      "status": "skipped",
+      "duration": 0,
+      "retry": 0
+    },
+    {
+      "id": "examples\\example.spec.ts:example test",
+      "title": "example test",
+      "specs": [],
+      "status": "failed",
+      "duration": 2732,
+      "error": {
+        "message": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.deg456789gv/\", waiting until \"load\"\u001b[22m\n",
+        "stack": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.deg456789gv/\", waiting until \"load\"\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:4:14"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-example-test-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "examples\\example.spec.ts:test started link",
+      "title": "test started link",
+      "specs": [],
+      "status": "passed",
+      "duration": 3149,
+      "retry": 0
+    },
+    {
+      "id": "PermiSET Navigation:skippp   right navigation",
+      "title": "skippp   right navigation",
+      "specs": [],
+      "status": "skipped",
+      "duration": 0,
+      "retry": 0
+    },
+    {
+      "id": "examples\\example.spec.ts:test fasfasf get 3",
+      "title": "test fasfasf get 3",
+      "specs": [],
+      "status": "failed",
+      "duration": 8095,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:23:71"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-test-fasfasf-get-3-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "examples\\example.spec.ts:get test started link 39 adfagfsadgsadg ",
+      "title": "get test started link 39 adfagfsadgsadg ",
+      "specs": [],
+      "status": "failed",
+      "duration": 8211,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:29:66"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-get-test-started-link-39-adfagfsadgsadg--chromium\\test-failed-1.png"
+    },
+    {
+      "id": "examples\\example.spec.ts:test prooo  link 2",
+      "title": "test prooo  link 2",
+      "specs": [],
+      "status": "failed",
+      "duration": 7962,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:35:78"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-test-prooo-link-2-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "PermiSET Navigation:Go to homepage",
+      "title": "Go to homepage",
+      "specs": [],
+      "status": "failed",
+      "duration": 7068,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"https://permiset-client-1.vercel.app/\"\u001b[39m\nReceived string: \u001b[31m\"https://permiset-client-1.vercel.app/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nCall log:\n\u001b[2m  - expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    9 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m      - unexpected value \"https://permiset-client-1.vercel.app/auth/login\"\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"https://permiset-client-1.vercel.app/\"\u001b[39m\nReceived string: \u001b[31m\"https://permiset-client-1.vercel.app/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nCall log:\n\u001b[2m  - expect.toHaveURL with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    9 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m      - unexpected value \"https://permiset-client-1.vercel.app/auth/login\"\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:26:28"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\permiset-navigation-PermiSET-Navigation-Go-to-homepage-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "PermiSET Navigation:Go logout",
+      "title": "Go logout",
+      "specs": [],
+      "status": "failed",
+      "duration": 15078,
+      "error": {
+        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Home' })\u001b[22m\n",
+        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Home' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:58:58"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\permiset-navigation-PermiSET-Navigation-Go-logout-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "PermiSET Navigation:right navigation",
+      "title": "right navigation",
+      "specs": [],
+      "status": "failed",
+      "duration": 15078,
+      "error": {
+        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n",
+        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:48:64"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\permiset-navigation-PermiSET-Navigation-right-navigation-chromium\\test-failed-1.png"
+    },
+    {
+      "id": "PermiSET Navigation:left navigation",
+      "title": "left navigation",
+      "specs": [],
+      "status": "failed",
+      "duration": 17076,
+      "error": {
+        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Dashboard' })\u001b[22m\n",
+        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Dashboard' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:31:63"
+      },
+      "retry": 0,
+      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\permiset-navigation-PermiSET-Navigation-left-navigation-chromium\\test-failed-1.png"
+    }
+  ]
+}

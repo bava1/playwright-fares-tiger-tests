@@ -1,0 +1,43 @@
+{
+  "name": "playwright-fares-tiger-tests",
+  "author": "vadym.barvinok@nev-dama.cz",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "automated search testing",
+  "main": "dist/reporters/generators/generator-test-report.cjs",
+  "types": "dist/reporters/generators/generator-test-report.d.ts",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "build": "tsc",
+    "start": "playwright test",
+    "test:build": "npm run build && npm run test",
+    "lint": "eslint . --ext .ts",
+    "run-tests": "ts-node run-tests.ts"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "reporter",
+    "test-report",
+    "test-results"
+  ],
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.24",
+    "@types/nodemailer": "^6.4.14",
+    "date-fns": "^3.3.1",
+    "nodemailer": "^6.9.9",
+    "strip-ansi": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1"
+  },
+  "packageManager": "pnpm@8.8.0+sha512.798e6b322669ce63c8da856bd62ad1f7b6f36f4dfaa0ac025af2bdd700d09dd5dca943e5cad3edac5d1b3baebc4b2c3fb80fbb8537f936733c32be2ec7805144"
+}

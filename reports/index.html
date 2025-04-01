@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <style>
+      @font-face {
+        font-family: "Noto Color Emoji";
+        src: url("https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf");
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      pre {
+        margin: 0 auto !important;
+        padding: 0 !important;
+      }
+      h4 {
+        margin: 0 !important;
+      }
+      .header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      }
+      .summary {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+      .summary-card {
+        flex: 1;
+        min-width: 150px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .summary-card.passed { border-top: 5px solid #4CAF50; }
+      .summary-card.failed { border-top: 5px solid #f44336; }
+      .summary-card.skipped { border-top: 5px solid #ff9800; }
+      .summary-card.time { border-top: 5px solid #2196F3; }
+      
+      .category {
+        margin: 25px 0 55px 0;
+      }
+      .category-header {
+        background-color: #2196F3;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      }
+      .test-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .test-item {
+        padding: 15px 15px;
+        margin: 7px auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      .test-item:last-child {
+        border-bottom: none;
+      }
+      .test-item.passed { background-color: #f1f8e9; }
+      .test-item.failed { background-color: #ffebee; }
+      .test-item.skipped { background-color: #fff3e0; }
+      .test-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .test-title {
+        font-weight: bold;
+        flex: 1;
+      }
+      .test-status {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .test-status.passed { background-color: #4CAF50; color: white; }
+      .test-status.failed { background-color: #f44336; color: white; }
+      .test-status.skipped { background-color: #ff9800; color: white; }
+      .test-duration {
+        color: #666;
+        font-size: 0.9em;
+      }
+      .test-error {
+        padding: 0 10px;
+        background-color: #ffebee;
+        border-radius: 4px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+      .test-screenshot {
+        margin-top: 10px;
+        max-width: 100%;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .chart-container {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .test-screenshot-info {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .screenshot-icon {
+        font-size: 1.2em;
+      }
+      .screenshot-link {
+        color: #2196F3;
+        text-decoration: none;
+      }
+      .screenshot-link:hover {
+        text-decoration: underline;
+      }
+      .emoji {
+        font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Test Report</h1>
+      <p>Generated on: 1. 4. 2025 11:15:59</p>
+    </div>
+
+    <div class="summary">
+      <div class="summary-card passed">
+        <h4>Passed</h4>
+        <p><span class="emoji">✅</span> 1</p>
+      </div>
+      <div class="summary-card failed">
+        <h4>Failed</h4>
+        <p><span class="emoji">❌</span> 8</p>
+      </div>
+      <div class="summary-card skipped">
+        <h4>Skipped</h4>
+        <p><span class="emoji">⏩</span> 3</p>
+      </div>
+      <div class="summary-card time">
+        <h4>Duration</h4>
+        <p><span class="emoji">⏱️</span> 24.04s</p>
+      </div>
+    </div>
+
+    
+      <div class="category">
+        <div class="category-header"><span class="emoji">📁</span> examples\example.spec.ts</div>
+        <ul class="test-list">
+          
+              <li class="test-item skipped">
+                <div class="test-header">
+                  <div class="test-title">test get started link 45</div>
+                  <div class="test-status skipped">
+                     SKIPPED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">⏩</span> Duration: 0.00s</div>
+                
+                
+              </li>
+            
+              <li class="test-item skipped">
+                <div class="test-header">
+                  <div class="test-title">get started link 5</div>
+                  <div class="test-status skipped">
+                     SKIPPED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">⏩</span> Duration: 0.00s</div>
+                
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">example test</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 2.73s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv/
+Call log:
+  - navigating to "https://playwright.deg456789gv/", waiting until "load"
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item passed">
+                <div class="test-header">
+                  <div class="test-title">test started link</div>
+                  <div class="test-status passed">
+                     PASSED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 3.15s</div>
+                
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">test fasfasf get 3</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 8.10s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByRole('heading', { name: 'Instaffllation' })
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByRole('heading', { name: 'Instaffllation' })
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">get test started link 39 adfagfsadgsadg </div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 8.21s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByRole('heading', { name: 'Igggggnst' })
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByRole('heading', { name: 'Igggggnst' })
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">test prooo  link 2</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 7.96s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
+</pre>
+                  </div>
+                
+              </li>
+            
+        </ul>
+      </div>
+    
+      <div class="category">
+        <div class="category-header"><span class="emoji">📁</span> PermiSET Navigation</div>
+        <ul class="test-list">
+          
+              <li class="test-item skipped">
+                <div class="test-header">
+                  <div class="test-title">skippp   right navigation</div>
+                  <div class="test-status skipped">
+                     SKIPPED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">⏩</span> Duration: 0.00s</div>
+                
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">Go to homepage</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 7.07s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+Locator: locator(':root')
+Expected string: "https://permiset-client-1.vercel.app/"
+Received string: "https://permiset-client-1.vercel.app/auth/login"
+Call log:
+  - expect.toHaveURL with timeout 5000ms
+  - waiting for locator(':root')
+    9 × locator resolved to <html lang="en">…</html>
+      - unexpected value "https://permiset-client-1.vercel.app/auth/login"
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">Go logout</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 15.08s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: TimeoutError: locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Home' })
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">right navigation</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 15.08s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: TimeoutError: locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Sethgtings' })
+</pre>
+                  </div>
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">left navigation</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 17.08s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: TimeoutError: locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Dashboard' })
+</pre>
+                  </div>
+                
+              </li>
+            
+        </ul>
+      </div>
+    
+
+    <div class="chart-container">
+      <canvas id="pie-chart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('pie-chart').getContext('2d');
+        const pieChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['1 Passed', '8 Failed', '3 Skipped'],
+            datasets: [{
+              data: [ 1, 8, 3],
+              backgroundColor: ['#4CAF50', '#f44336', '#ff9800']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+                position: 'bottom',
+              },
+              title: {
+                display: true,
+                text: 'Test Results Distribution',
+                font: {
+                  size: 18,
+                  weight: 'bold',
+                }
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>
