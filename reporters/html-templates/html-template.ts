@@ -13,7 +13,7 @@ export const htmlTemplate = (summary: {
   screenshot?: string;
   statusEmoji?: string;
 }>) => {
-  // Функция для очистки ANSI-кодов из текста
+  // Function to clean ANSI codes from text
   const stripAnsi = (str: string | undefined) => {
     return str?.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '') || '';
   };

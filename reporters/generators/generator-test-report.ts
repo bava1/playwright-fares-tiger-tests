@@ -1,25 +1,29 @@
 import { Reporter, TestCase, TestResult as PlaywrightTestResult, FullResult } from '@playwright/test/reporter';
-import * as path from 'path';
-import { TestResultData, TestSummary, PlaywrightReport, TestSuite, TestSpec, TestResult, TestError } from '../interfaces/types';
-import { REPORTS_DIR, SCREENSHOTS_DIR, LOG_PATH, PARSED_LOG_PATH, HTML_REPORT_PATH } from '../config/paths';
-import { TestStatus } from '../types/emoji.types';
-import { createDirectory, deleteFile, writeFile, initializeReportDirectories } from '../helpers/file-system';
-import { generateHtmlReport, generateTextReport } from '../helpers/template';
-import { createTestResultsManager, processTestResults, finalizeTestResults } from '../helpers/test-results';
+import { TestResultData, PlaywrightReport } from '../types/types';
+import { PARSED_LOG_PATH, HTML_REPORT_PATH, LOG_PATH } from '../config/paths';
+import { createDirectory, deleteFile, writeFile, initializeReportDirectories } from '../helpers/helper-file-system';
+import { generateHtmlReport, generateTextReport } from '../helpers/helper-template';
+import { createTestResultsManager, processTestResults, finalizeTestResults } from '../helpers/helper-test-results';
+import { TestResultsManager } from '../types/test-results.types';
+
+type PlaywrightTestStatus = 'passed' | 'failed' | 'timedOut' | 'skipped' | 'interrupted';
+type FullResultStatus = 'passed' | 'failed' | 'interrupted' | 'timedout';
 
 /**
  * Enhanced reporter for Playwright that generates text and HTML reports
  */
 class EnhancedReporter implements Reporter {
-  private manager = createTestResultsManager({
-    onError: (error) => console.error('Error in reporter:', error),
-    onWarning: (warning) => console.warn('Warning in reporter:', warning),
-    onInfo: (info) => console.log('Info from reporter:', info)
-  });
+  private manager: TestResultsManager;
 
   constructor() {
+    this.manager = createTestResultsManager({
+      onError: (error) => console.error('Error in reporter:', error),
+      onWarning: (warning) => console.warn('Warning in reporter:', warning),
+      onInfo: (info) => console.log('Info from reporter:', info)
+    });
+
     try {
-      // Инициализируем директории для отчетов
+      // Initialize report directories
       const results = initializeReportDirectories();
       const errors = results.filter(r => !r.success);
       
@@ -27,19 +31,54 @@ class EnhancedReporter implements Reporter {
         console.error('Error initializing report directories:', errors);
       }
 
-      // Удаляем старый файл parsed-log.txt
-      deleteFile(PARSED_LOG_PATH);
+      // Delete old parsed-log.txt file
+      const deleteResult = deleteFile(PARSED_LOG_PATH);
+      if (!deleteResult.success) {
+        console.warn('Could not delete old parsed log file:', deleteResult.error);
+      }
     } catch (err) {
       console.error('Error initializing reporter:', err instanceof Error ? err.message : String(err));
     }
   }
 
   onTestBegin(test: TestCase): void {
-    // Можно добавить логику для начала теста, если нужно
+    try {
+      console.log(`Starting test: ${test.title}`);
+    } catch (err) {
+      console.error('Error in onTestBegin:', err instanceof Error ? err.message : String(err));
+    }
   }
 
   onTestEnd(test: TestCase, result: PlaywrightTestResult): void {
-    processTestResults(this.manager, { status: 'passed' } as FullResult, test, result);
+    try {
+      // Convert test status to match FullResult status type
+      let status: FullResultStatus;
+      switch (result.status as PlaywrightTestStatus) {
+        case 'passed':
+          status = 'passed';
+          break;
+        case 'timedOut':
+          status = 'timedout';
+          break;
+        case 'interrupted':
+          status = 'interrupted';
+          break;
+        case 'failed':
+        case 'skipped':
+        default:
+          status = 'failed';
+          break;
+      }
+
+      const fullResult: FullResult = {
+        status,
+        startTime: new Date(this.manager.startTime),
+        duration: Date.now() - this.manager.startTime
+      };
+      processTestResults(this.manager, fullResult, test, result);
+    } catch (err) {
+      console.error('Error in onTestEnd:', err instanceof Error ? err.message : String(err));
+    }
   }
 
   onEnd(result: FullResult): void {

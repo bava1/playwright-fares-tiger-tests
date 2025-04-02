@@ -1,12 +1,14 @@
 import { htmlTemplate } from '../html-templates/html-template';
-import { getStatusEmoji } from './emoji';
-import { cleanErrorMessage } from './text-cleaner';
+import { getStatusEmoji } from './helper-emoji';
+import { cleanErrorMessage } from './helper-text-cleaner';
 import { TemplateOptions, TextTemplateOptions } from '../types/template.types';
 import { TestStatus } from '../types/emoji.types';
-import { TestResultData } from '../interfaces/types';
+import { TestResultData } from '../types/types';
 
 /**
- * Генерирует HTML отчет на основе шаблона
+ * Generates HTML report based on template
+ * @param options Template options
+ * @returns HTML report
  */
 export function generateHtmlReport(options: TemplateOptions): string {
   const {
@@ -23,28 +25,31 @@ export function generateHtmlReport(options: TemplateOptions): string {
   const testResults = new Map<string, {
     status: string;
     duration: number;
-    error?: { message?: string; stack?: string };
+    error?: {
+      message?: string;
+      stack?: string;
+    };
     screenshot?: string;
     statusEmoji?: string;
   }>();
 
-  // Группируем тесты по категориям
-  results.forEach((result: TestResultData, id: string) => {
-    const [category, testName] = id.split(':');
+  // Group tests by categories
+  for (const [testId, result] of results.entries()) {
+    const [category, testName] = testId.split(':');
     if (!testCategories.has(category)) {
       testCategories.set(category, []);
     }
     testCategories.get(category)?.push(testName);
 
-    // Добавляем результат теста с эмодзи для HTML
-    testResults.set(id, {
+    // Add test result with emoji for HTML
+    testResults.set(testId, {
       status: result.status,
       duration: result.duration,
       error: result.error,
       screenshot: result.screenshot,
       statusEmoji: getStatusEmoji(result.status as TestStatus)
     });
-  });
+  }
 
   return htmlTemplate(
     {
@@ -59,7 +64,9 @@ export function generateHtmlReport(options: TemplateOptions): string {
 }
 
 /**
- * Генерирует текстовый отчет
+ * Generates text report
+ * @param options Text template options
+ * @returns Text report
  */
 export function generateTextReport(options: TextTemplateOptions): string {
   const {
@@ -73,35 +80,30 @@ export function generateTextReport(options: TextTemplateOptions): string {
   } = options;
 
   const duration = endTime - startTime;
-  let report = '';
-
-  // Добавляем заголовок
-  report += 'Playwright Test Report\n';
-  report += '═'.repeat(80) + '\n\n';
-
-  // Добавляем общую статистику
-  report += `Total Tests: ${summary.total}\n`;
+  let report = 'Test Report\n';
+  report += `Generated on: ${new Date().toLocaleString()}\n\n`;
+  report += `Summary:\n`;
+  report += `Total: ${summary.total}\n`;
   report += `Passed: ${summary.passed}\n`;
   report += `Failed: ${summary.failed}\n`;
   report += `Skipped: ${summary.skipped}\n`;
-  report += `Duration: ${duration}ms\n\n`;
+  report += `Duration: ${(duration / 1000).toFixed(2)}s\n\n`;
 
-  // Добавляем детали по каждому тесту
   if (includeDetails) {
     report += 'Test Details\n';
     report += '═'.repeat(80) + '\n\n';
 
-    // Группируем тесты по категориям
+    // Group tests by categories
     const categories = new Map<string, Array<{ id: string; result: any }>>();
-    results.forEach((result, id) => {
-      const [category] = id.split(':');
+    for (const [testId, result] of results.entries()) {
+      const [category] = testId.split(':');
       if (!categories.has(category)) {
         categories.set(category, []);
       }
-      categories.get(category)?.push({ id, result });
-    });
+      categories.get(category)?.push({ id: testId, result });
+    }
 
-    // Выводим тесты по категориям
+    // Output tests by categories
     categories.forEach((tests, category) => {
       report += `📁 ${category}\n`;
       report += '─'.repeat(80) + '\n\n';
@@ -112,11 +114,10 @@ export function generateTextReport(options: TextTemplateOptions): string {
         
         report += `${status} ${testName}\n`;
         report += `Status: ${result.status}\n`;
-        report += `Duration: ${result.duration}ms\n`;
+        report += `Duration: ${(result.duration / 1000).toFixed(2)}s\n`;
 
         if (includeErrors && result.error) {
-          report += cleanErrorMessage(result.error.message);
-          report += '\n';
+          report += `Error: ${cleanErrorMessage(result.error.message || 'Unknown error')}\n`;
         }
 
         if (includeScreenshots && result.screenshot) {

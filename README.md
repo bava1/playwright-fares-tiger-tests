@@ -1,142 +1,149 @@
-# Automated Testing System for Tour Booking Web Service
+# Playwright Test Automation with Email Reports
 
-This project is designed for automated testing of a tour booking web service using Playwright. The system includes testing of core functions, report generation, and email result delivery.
+This project contains automated tests for the Tour Booking Web Service, built with Playwright and configured to send test reports via email.
 
-## Features
+## Prerequisites
 
-- ✅ Automated testing of key tour booking service functions
-- 📊 Generation of detailed HTML and text reports
-- 📷 Screenshot attachments for failed tests
-- 📧 Email report delivery
-- ⏰ Scheduled test execution
-
-## Requirements
-
-- Node.js 14 or higher
-- npm or pnpm
-- Access to SMTP server for email delivery
+- Node.js (v14 or higher)
+- pnpm (v8 or higher)
+- Windows OS (for scheduled tasks)
 
 ## Installation
 
+1. Clone the repository:
 ```bash
-# Clone repository
 git clone <repository-url>
-cd <project-name>
+cd playwright-fares-tiger-tests
+```
 
-# Install dependencies
-npm install
-# or
+2. Install dependencies:
+```bash
 pnpm install
+```
 
-# Install Playwright browsers
-npx playwright install
+3. Install Playwright browsers:
+```bash
+pnpm playwright install chromium
 ```
 
 ## Configuration
 
-### Email Configuration
+1. Copy the example email configuration file:
+```bash
+cp email-config.json.example email-config.json
+```
 
-Create an `email-config.json` file in the project root:
-
+2. Update the email configuration in `email-config.json` with your SMTP settings:
 ```json
 {
-  "host": "smtp.example.com",
-  "port": 587,
-  "secure": false,
-  "auth": {
-    "user": "your-email@example.com",
-    "pass": "your-password"
+  "smtp": {
+    "host": "your-smtp-server",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "your-email@example.com",
+      "pass": "your-password"
+    }
   },
-  "from": "automated-tests@example.com",
+  "from": "your-email@example.com",
   "to": ["recipient1@example.com", "recipient2@example.com"],
-  "subject": "Tour Booking Web Service Test Report"
+  "subject": "Tour Booking Web Service Test Report",
+  "attachments": {
+    "maxCount": 10,
+    "types": ["png"],
+    "includeScreenshots": true
+  }
 }
 ```
 
-Or configure environment variables:
+Alternatively, you can set the following environment variables:
+- `EMAIL_HOST`
+- `EMAIL_PORT`
+- `EMAIL_SECURE`
+- `EMAIL_USER`
+- `EMAIL_PASS`
+- `EMAIL_FROM`
+- `EMAIL_TO` (comma-separated list)
+- `EMAIL_SUBJECT`
 
-```
-EMAIL_HOST=smtp.example.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
-EMAIL_USER=your-email@example.com
-EMAIL_PASS=your-password
-EMAIL_FROM=automated-tests@example.com
-EMAIL_TO=recipient1@example.com,recipient2@example.com
-EMAIL_SUBJECT=Tour Booking Web Service Test Report
-```
+## Running Tests
 
-### Automated Test Execution Setup
+### Manual Execution
 
-To set up automatic cron job, run:
-
+1. Run tests and generate report:
 ```bash
-sudo node setup-cron.js
+pnpm run-tests
 ```
 
-By default, tests will run daily at 6:00 AM. To change the time, use environment variables:
-
-```
-CRON_HOUR=8
-CRON_MINUTE=30
-```
-
-## Usage
-
-### Manual Test Execution
-
+2. View the report locally:
 ```bash
-# Run all tests
-npm test
-
-# Run specific test
-npx playwright test tests/booking.spec.ts
+pnpm report
 ```
 
-### Report Generation
+### Scheduled Execution
 
-Reports are automatically generated after test execution in the `reports/` directory.
-
-### Email Report Delivery
-
+1. Open PowerShell as Administrator
+2. Navigate to the project directory
+3. Run the scheduling script:
 ```bash
-# Send latest report
-npm run report
+.\schedule-tests.ps1
 ```
+
+The tests will now run automatically at 9:00 AM daily.
 
 ## Project Structure
 
-- `tests/` - Test directory
-  - `booking.spec.ts` - Tests for the booking web service
-- `reporters/generators/generator-test-report.ts` - Reporter for generating text and HTML reports
-- `email-reporter.ts` - Module for email report delivery
-- `setup-cron.js` - Script for automated execution setup
-- `reports/` - Directory for generated reports
-- `test-results/` - Directory for screenshots and traces
+```
+playwright-fares-tiger-tests/
+├── reporters/
+│   ├── email/
+│   │   ├── config.ts
+│   │   ├── email-service.ts
+│   │   ├── index.ts
+│   │   └── types.ts
+│   └── ...
+├── tests/
+├── email-config.json
+├── run-tests.ts
+├── schedule-tests.ps1
+└── package.json
+```
 
-## Test Examples
+## Features
 
-The project includes test examples for core booking web service functions:
-
-- Main page loading verification
-- Tour search testing
-- Tour page display verification
-- Booking process testing
-- User authentication verification
-- Personal account testing
-
-## Extending Functionality
-
-To add new tests, create new files in the `tests/` directory following the existing examples.
+- Automated test execution
+- HTML test reports
+- Email notifications with test results
+- Screenshot attachments for failed tests
+- Scheduled test runs
+- Error handling and retry logic
+- Configurable email settings
 
 ## Troubleshooting
 
-If you encounter issues with report delivery, check:
+1. If email sending fails:
+   - Check your SMTP settings in `email-config.json`
+   - Verify your email credentials
+   - Ensure your network allows SMTP connections
 
-1. SMTP configuration in `email-config.json`
-2. SMTP server access
-3. Error logs in the console
+2. If scheduled tasks don't run:
+   - Check Windows Task Scheduler
+   - Verify the task is enabled
+   - Check the task's history for errors
+
+3. If tests fail:
+   - Check the test logs in `playwright-report/`
+   - Review the email report for details
+   - Check the screenshots in `test-results/screenshots/`
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-MIT 
+ISC 

@@ -1,4 +1,4 @@
-import { TestResultData, TestSummary, PlaywrightReport, TestReportData } from '../interfaces/types';
+import { TestResultData, TestSummary, PlaywrightReport, TestReportData } from './types';
 
 export interface TemplateOptions extends TestReportData {
   title?: string;

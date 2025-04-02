@@ -1,5 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
+// import os from 'os';
+
+// const cpuCount = os.cpus().length;
+
+// console.log(`🧠 Доступно логических ядер: ${cpuCount}`);
+// console.log(`🛠️  Playwright, скорее всего, будет использовать ${cpuCount} воркеров (если ты не в CI)`);
 
 export default defineConfig({
   testDir: './tests',
@@ -8,8 +14,8 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   // workers: 4,
-  workers: process.env.CI ? 1 : undefined,
-  
+  // workers: process.env.CI ? 1 : undefined,
+  // workers: cpuCount,
   reporter: [
     ['line'],
     ['json', { outputFile: 'logs/test-report.json' }],

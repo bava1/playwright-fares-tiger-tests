@@ -1,89 +1,57 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const { format } = require('date-fns');
+import { exec } from 'child_process';
+import { promisify } from 'util';
+import { EmailService } from './reporters/email/email-index';
+import { sendTestEmail } from './reporters/email/email-sending-test';
 
-// Setup paths and variables
-const PROJECT_ROOT: string = process.cwd();
-const LOG_DIR: string = path.join(PROJECT_ROOT, 'logs');
-const LOG_FILE: string = path.join(LOG_DIR, `test-run-${format(new Date(), 'yyyyMMdd')}.log`);
-let ERROR_COUNT: number = 0;
+const execAsync = promisify(exec);
 
-// Logging function
-function log(message: string): void {
-    const timestamp: string = format(new Date(), 'yyyy-MM-dd HH:mm:ss');
-    const logMessage: string = `[${timestamp}] ${message}\n`;
+async function runTests() {
+  try {
+    console.log('🚀 Starting test execution...');
     
-    // Create logs directory if it doesn't exist
-    if (!fs.existsSync(LOG_DIR)) {
-        fs.mkdirSync(LOG_DIR, { recursive: true });
-    }
-    
-    // Write to file and output to console
-    fs.appendFileSync(LOG_FILE, logMessage);
-    console.log(message);
-}
+    // Run Playwright tests
+    const { stdout, stderr } = await execAsync('playwright test');
+    console.log(stdout);
+    if (stderr) console.error(stderr);
 
-// Function to check if command exists
-function checkCommand(command: string): boolean {
-    try {
-        execSync(`where ${command}`, { stdio: 'ignore' });
-        return true;
-    } catch (error) {
-        return false;
-    }
-}
+    // Initialize email service
+    const emailService = new EmailService();
+    await emailService.initialize();
 
-// Check if Node.js is installed
-if (!checkCommand('node')) {
-    log('ERROR: Node.js is not installed');
-    ERROR_COUNT++;
-    process.exit(1);
-}
+    // Send simple email with test results
+    const result = await emailService.sendEmail({
+      html: `
+        <h2>Test Execution Results</h2>
+        <pre>${stdout}</pre>
+      `,
+    });
 
-// Check if pnpm is installed
-if (!checkCommand('pnpm')) {
-    log('ERROR: pnpm is not installed');
-    ERROR_COUNT++;
-    process.exit(1);
-}
-
-// Check if package.json exists
-if (!fs.existsSync(path.join(PROJECT_ROOT, 'package.json'))) {
-    log('ERROR: package.json not found');
-    ERROR_COUNT++;
-    process.exit(1);
-}
-
-try {
-    // Install/update dependencies
-    log('Installing dependencies...');
-    execSync('pnpm install', { stdio: 'inherit' });
-
-    // Install Playwright browsers
-    log('Installing Playwright browsers...');
-    execSync('pnpm playwright install chromium', { stdio: 'inherit' });
-
-    // Run tests
-    log('Running tests...');
-    execSync('pnpm playwright test', { stdio: 'inherit' });
-
-    // Check if reports exist
-    if (!fs.existsSync(path.join(PROJECT_ROOT, 'logs', 'test-report.json'))) {
-        log('ERROR: Test report was not created');
-        ERROR_COUNT++;
-        process.exit(1);
-    }
-
-    log('Tests completed successfully');
-    process.exit(0);
-} catch (error) {
-    if (error instanceof Error) {
-        log(`ERROR: ${error.message}`);
+    if (result.success) {
+      console.log('✅ Test results sent successfully');
     } else {
-        log('ERROR: An unknown error occurred');
+      console.error('❌ Failed to send test results:', result.error);
     }
-    ERROR_COUNT++;
-    log(`Exiting with errors (error count: ${ERROR_COUNT})`);
+
+    // Cleanup
+    await emailService.cleanup();
+
+  } catch (error) {
+    console.error('❌ Error during test execution:', error);
     process.exit(1);
-} 
+  }
+}
+
+runTests();
+
+async function runEmailTests(): Promise<void> {
+  try {
+    await sendTestEmail();
+  } catch (error) {
+    console.error('Failed to run email tests:', error);
+    process.exit(1);
+  }
+}
+
+// Comment out the function you don't need temporarily
+// runTests();
+// runEmailTests(); 

@@ -1,7 +1,12 @@
 import { test, expect } from '@playwright/test';
 
 test('example test', async ({ page }) => {
-  await page.goto('https://playwright.deg456789gv');
+  await page.goto('https://playwright.deg456789gv8888888888888888');
+  await expect(page).toHaveTitle(/Playwright/);
+});
+
+test('example test 2', async ({ page }) => {
+  await page.goto('https://playwright.dev');
   await expect(page).toHaveTitle(/Playwright/);
 });
 

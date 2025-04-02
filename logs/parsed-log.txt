@@ -1,11 +1,12 @@
-Playwright Test Report
-════════════════════════════════════════════════════════════════════════════════
+Test Report
+Generated on: 2. 4. 2025 15:55:44
 
-Total Tests: 12
-Passed: 1
-Failed: 8
+Summary:
+Total: 13
+Passed: 5
+Failed: 5
 Skipped: 3
-Duration: 24041ms
+Duration: 20.06s
 
 Test Details
 ════════════════════════════════════════════════════════════════════════════════
@@ -15,53 +16,44 @@ Test Details
 
 ⏩ test get started link 45
 Status: skipped
-Duration: 0ms
+Duration: 0.00s
 
 ────────────────────────────────────────────────────────────────────────────────
 
 ⏩ get started link 5
 Status: skipped
-Duration: 0ms
+Duration: 0.00s
 
 ────────────────────────────────────────────────────────────────────────────────
 
 ❌ example test
 Status: failed
-Duration: 2732ms
-Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv/
+Duration: 0.46s
+Error: Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv8888888888888888/
 Call log:
-  - navigating to &quot;https://playwright.deg456789gv/&quot;, waiting until &quot;load&quot;
+  - navigating to &quot;https://playwright.deg456789gv8888888888888888/&quot;, waiting until &quot;load&quot;
+
 Screenshot:
 - C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\examples-example-example-test-chromium\test-failed-1.png
 
 ────────────────────────────────────────────────────────────────────────────────
 
-✅ test started link
+✅ example test 2
 Status: passed
-Duration: 3149ms
+Duration: 0.73s
 
 ────────────────────────────────────────────────────────────────────────────────
 
-❌ test fasfasf get 3
-Status: failed
-Duration: 8095ms
-Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-Locator: getByRole(&#039;heading&#039;, { name: &#039;Instaffllation&#039; })
-Expected: visible
-Received: &lt;element(s) not found&gt;
-Call log:
-  - expect.toBeVisible with timeout 5000ms
-  - waiting for getByRole(&#039;heading&#039;, { name: &#039;Instaffllation&#039; })
-Screenshot:
-- C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\examples-example-test-fasfasf-get-3-chromium\test-failed-1.png
+✅ test started link
+Status: passed
+Duration: 1.07s
 
 ────────────────────────────────────────────────────────────────────────────────
 
 ❌ get test started link 39 adfagfsadgsadg 
 Status: failed
-Duration: 8211ms
-Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+Duration: 5.82s
+Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
 Locator: getByRole(&#039;heading&#039;, { name: &#039;Igggggnst&#039; })
 Expected: visible
@@ -69,15 +61,33 @@ Received: &lt;element(s) not found&gt;
 Call log:
   - expect.toBeVisible with timeout 5000ms
   - waiting for getByRole(&#039;heading&#039;, { name: &#039;Igggggnst&#039; })
+
 Screenshot:
 - C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\examples-example-get-test-started-link-39-adfagfsadgsadg--chromium\test-failed-1.png
 
 ────────────────────────────────────────────────────────────────────────────────
 
+❌ test fasfasf get 3
+Status: failed
+Duration: 5.75s
+Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByRole(&#039;heading&#039;, { name: &#039;Instaffllation&#039; })
+Expected: visible
+Received: &lt;element(s) not found&gt;
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByRole(&#039;heading&#039;, { name: &#039;Instaffllation&#039; })
+
+Screenshot:
+- C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\examples-example-test-fasfasf-get-3-chromium\test-failed-1.png
+
+────────────────────────────────────────────────────────────────────────────────
+
 ❌ test prooo  link 2
 Status: failed
-Duration: 7962ms
-Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+Duration: 6.19s
+Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
 Locator: getByRole(&#039;heading&#039;, { name: &#039;Isdsssssssnstallation&#039; })
 Expected: visible
@@ -85,6 +95,7 @@ Received: &lt;element(s) not found&gt;
 Call log:
   - expect.toBeVisible with timeout 5000ms
   - waiting for getByRole(&#039;heading&#039;, { name: &#039;Isdsssssssnstallation&#039; })
+
 Screenshot:
 - C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\examples-example-test-prooo-link-2-chromium\test-failed-1.png
 
@@ -95,58 +106,37 @@ Screenshot:
 
 ⏩ skippp   right navigation
 Status: skipped
-Duration: 0ms
+Duration: 0.00s
 
 ────────────────────────────────────────────────────────────────────────────────
 
-❌ Go to homepage
-Status: failed
-Duration: 7068ms
-Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
-
-Locator: locator(&#039;:root&#039;)
-Expected string: &quot;https://permiset-client-1.vercel.app/&quot;
-Received string: &quot;https://permiset-client-1.vercel.app/auth/login&quot;
-Call log:
-  - expect.toHaveURL with timeout 5000ms
-  - waiting for locator(&#039;:root&#039;)
-    9 × locator resolved to &lt;html lang=&quot;en&quot;&gt;…&lt;/html&gt;
-      - unexpected value &quot;https://permiset-client-1.vercel.app/auth/login&quot;
-Screenshot:
-- C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\permiset-navigation-PermiSET-Navigation-Go-to-homepage-chromium\test-failed-1.png
+✅ Go to homepage
+Status: passed
+Duration: 2.02s
 
 ────────────────────────────────────────────────────────────────────────────────
 
-❌ Go logout
-Status: failed
-Duration: 15078ms
-TimeoutError: locator.click: Timeout 15000ms exceeded.
-Call log:
-  - waiting for getByRole(&#039;button&#039;, { name: &#039;Home&#039; })
-Screenshot:
-- C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\permiset-navigation-PermiSET-Navigation-Go-logout-chromium\test-failed-1.png
+✅ Go logout
+Status: passed
+Duration: 1.92s
+
+────────────────────────────────────────────────────────────────────────────────
+
+✅ left navigation
+Status: passed
+Duration: 3.33s
 
 ────────────────────────────────────────────────────────────────────────────────
 
 ❌ right navigation
 Status: failed
-Duration: 15078ms
-TimeoutError: locator.click: Timeout 15000ms exceeded.
+Duration: 15.06s
+Error: TimeoutError: locator.click: Timeout 15000ms exceeded.
 Call log:
   - waiting for getByRole(&#039;button&#039;, { name: &#039;Sethgtings&#039; })
+
 Screenshot:
 - C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\permiset-navigation-PermiSET-Navigation-right-navigation-chromium\test-failed-1.png
-
-────────────────────────────────────────────────────────────────────────────────
-
-❌ left navigation
-Status: failed
-Duration: 17076ms
-TimeoutError: locator.click: Timeout 15000ms exceeded.
-Call log:
-  - waiting for getByRole(&#039;button&#039;, { name: &#039;Dashboard&#039; })
-Screenshot:
-- C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\test-results\permiset-navigation-PermiSET-Navigation-left-navigation-chromium\test-failed-1.png
 
 ────────────────────────────────────────────────────────────────────────────────
 
