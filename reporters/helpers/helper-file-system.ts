@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { FileSystemResult, DirectoryOptions, WriteFileOptions } from '../types/file-system.types';
-import { REPORTS_DIR, SCREENSHOTS_DIR } from '../config/paths';
+import { LOG_PATH } from '../config/paths';
 
 /**
  * Creates a directory if it doesn't exist
@@ -70,9 +69,7 @@ export function writeFile(path: string, data: string): { success: boolean; error
  */
 export function initializeReportDirectories(): Array<{ success: boolean; error?: string }> {
   const dirs = [
-    { path: REPORTS_DIR },
-    { path: path.join(REPORTS_DIR, 'report') },
-    { path: SCREENSHOTS_DIR }
+    { path: path.dirname(LOG_PATH) }  // Create logs directory
   ];
 
   const results = [];

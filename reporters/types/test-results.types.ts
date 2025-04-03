@@ -1,6 +1,5 @@
-import { TestCase, TestResult as PlaywrightTestResult, FullResult } from '@playwright/test/reporter';
-import { TestResultData, TestSummary } from '../interfaces/types';
-import { TestStatus } from './emoji.types';
+import { TestCase, TestResult as PlaywrightTestResult } from '@playwright/test/reporter';
+import { TestResultData, TestSummary } from '../types/types';
 
 export interface TestResultsManager {
   startTime: number;

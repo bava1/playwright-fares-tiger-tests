@@ -1,7 +1,11 @@
 import { TestCase, TestResult as PlaywrightTestResult, FullResult } from '@playwright/test/reporter';
 import { TestResultData, TestSummary, TestError } from '../types/types';
-import { TestStatus } from '../types/emoji.types';
+import { TestStatus } from '../types/types';
 import { TestResultsManager, TestResultProcessor, TestResultsOptions } from '../types/test-results.types';
+
+interface ExtendedTestResult extends PlaywrightTestResult {
+  screenshot?: string;
+}
 
 /**
  * Creates a test results manager
@@ -37,24 +41,24 @@ export function createTestResultsManager(callbacks: {
  */
 function createTestResultProcessor(manager: TestResultsManager): TestResultProcessor {
   return {
-    processTestResult(testResult: PlaywrightTestResult, test: TestCase): TestResultData {
+    processTestResult(testResult: ExtendedTestResult, test: TestCase): TestResultData {
       const testId = `${test.parent.title}:${test.title}`;
-      const testResultData: TestResultData = {
+      const result: TestResultData = {
         status: testResult.status as TestStatus,
         duration: testResult.duration,
         error: testResult.error ? {
-          message: testResult.error.message || 'Unknown error',
+          message: testResult.error.message,
           stack: testResult.error.stack
         } : undefined,
         retry: testResult.retry,
-        screenshot: testResult.attachments?.find(a => a.contentType === 'image/png')?.path
+        screenshot: testResult.screenshot
       };
 
       manager.results.set(testId, testResult);
       manager.testCases.set(testId, test);
-      manager.testResults.set(testId, testResultData);
+      manager.testResults.set(testId, result);
 
-      return testResultData;
+      return result;
     },
     updateSummary(result: TestResultData): void {
       manager.summary.total++;

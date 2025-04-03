@@ -1,4 +1,17 @@
-import { TestStatus } from '../types/emoji.types';
+export type TestStatus = 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted' | 'unknown';
+
+export interface EmojiSet {
+  passed: string;
+  failed: string;
+  skipped: string;
+  timedOut: string;
+  interrupted: string;
+  unknown: string;
+}
+
+export interface EmojiMap {
+  [key: string]: string;
+}
 
 export interface EmailConfig {
   host: string;
@@ -63,12 +76,26 @@ export interface TestReportData {
 }
 
 export interface PlaywrightReport {
-  stats: {
-    total: number;
-    passed: number;
-    failed: number;
-    skipped: number;
-    duration: number;
+  config: {
+    metadata: {
+      platform: string;
+      projectName: string;
+      timestamp: string;
+    };
   };
   suites: TestSuite[];
+  summary: TestSummary;
+}
+
+export interface TemplateOptions extends TestReportData {
+  title?: string;
+  timestamp?: string;
+}
+
+export interface TextTemplateOptions extends TestReportData {
+  title?: string;
+  timestamp?: string;
+  includeDetails?: boolean;
+  includeErrors?: boolean;
+  includeScreenshots?: boolean;
 } 

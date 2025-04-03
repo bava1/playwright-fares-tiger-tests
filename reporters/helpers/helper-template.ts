@@ -1,26 +1,19 @@
 import { htmlTemplate } from '../html-templates/html-template';
-import { getStatusEmoji } from './helper-emoji';
-import { cleanErrorMessage } from './helper-text-cleaner';
-import { TemplateOptions, TextTemplateOptions } from '../types/template.types';
-import { TestStatus } from '../types/emoji.types';
+import { getStatusEmoji } from './helper-text-utils';
+import { cleanErrorMessage } from './helper-text-utils';
+import { TemplateOptions, TextTemplateOptions } from '../types/types';
+import { TestStatus } from '../types/types';
 import { TestResultData } from '../types/types';
 
 /**
- * Generates HTML report based on template
- * @param options Template options
- * @returns HTML report
+ * Generates an HTML report from test results
+ * @param options Report generation options
+ * @returns HTML string
  */
 export function generateHtmlReport(options: TemplateOptions): string {
-  const {
-    summary,
-    results,
-    startTime,
-    endTime,
-    title = 'Playwright Test Report',
-    theme = 'light'
-  } = options;
+  const { results, summary, title = 'Test Report', timestamp = new Date().toISOString() } = options;
 
-  const duration = endTime - startTime;
+  const duration = options.endTime - options.startTime;
   const testCategories = new Map<string, string[]>();
   const testResults = new Map<string, {
     status: string;
@@ -64,22 +57,14 @@ export function generateHtmlReport(options: TemplateOptions): string {
 }
 
 /**
- * Generates text report
- * @param options Text template options
- * @returns Text report
+ * Generates a text report from test results
+ * @param options Report generation options
+ * @returns Text string
  */
 export function generateTextReport(options: TextTemplateOptions): string {
-  const {
-    summary,
-    results,
-    startTime,
-    endTime,
-    includeDetails = true,
-    includeErrors = true,
-    includeScreenshots = true
-  } = options;
+  const { results, summary, title = 'Test Report', timestamp = new Date().toISOString() } = options;
 
-  const duration = endTime - startTime;
+  const duration = options.endTime - options.startTime;
   let report = 'Test Report\n';
   report += `Generated on: ${new Date().toLocaleString()}\n\n`;
   report += `Summary:\n`;
@@ -89,7 +74,7 @@ export function generateTextReport(options: TextTemplateOptions): string {
   report += `Skipped: ${summary.skipped}\n`;
   report += `Duration: ${(duration / 1000).toFixed(2)}s\n\n`;
 
-  if (includeDetails) {
+  if (options.includeDetails) {
     report += 'Test Details\n';
     report += '═'.repeat(80) + '\n\n';
 
@@ -116,11 +101,11 @@ export function generateTextReport(options: TextTemplateOptions): string {
         report += `Status: ${result.status}\n`;
         report += `Duration: ${(result.duration / 1000).toFixed(2)}s\n`;
 
-        if (includeErrors && result.error) {
+        if (options.includeErrors && result.error) {
           report += `Error: ${cleanErrorMessage(result.error.message || 'Unknown error')}\n`;
         }
 
-        if (includeScreenshots && result.screenshot) {
+        if (options.includeScreenshots && result.screenshot) {
           report += 'Screenshot:\n';
           report += `- ${result.screenshot}\n`;
         }

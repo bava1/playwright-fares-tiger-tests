@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { EmailService } from './reporters/email/email-index';
-import { sendTestEmail } from './reporters/email/email-sending-test';
+import { EmailService } from './reporters/email/email-service';
+import { loadEmailConfig } from './reporters/email/email-config';
 
 const execAsync = promisify(exec);
 
@@ -14,8 +14,11 @@ async function runTests() {
     console.log(stdout);
     if (stderr) console.error(stderr);
 
+    // Load email configuration
+    const emailConfig = await loadEmailConfig();
+
     // Initialize email service
-    const emailService = new EmailService();
+    const emailService = new EmailService(emailConfig);
     await emailService.initialize();
 
     // Send simple email with test results
@@ -41,17 +44,5 @@ async function runTests() {
   }
 }
 
-runTests();
-
-async function runEmailTests(): Promise<void> {
-  try {
-    await sendTestEmail();
-  } catch (error) {
-    console.error('Failed to run email tests:', error);
-    process.exit(1);
-  }
-}
-
-// Comment out the function you don't need temporarily
-// runTests();
-// runEmailTests(); 
+// Run the tests
+runTests(); 

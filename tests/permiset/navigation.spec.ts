@@ -3,10 +3,11 @@ import { test, expect, BrowserContext, Page } from '@playwright/test';
 test.describe('PermiSET Navigation', () => {
     let context: BrowserContext;
     let page: Page;
-    const clientURL = 'https://permiset-client-1.vercel.app';
+    const clientURL = process.env.PERMISET_CLIENT_URL || 'https://permiset-client-1.vercel.app';
+    const testTimeout = parseInt(process.env.TEST_TIMEOUT || '2000');
     let authData = {
-        userEmail: 'k.asmus@test.com',
-        userPassword: '123456'
+        userEmail: process.env.PERMISET_USER_EMAIL || 'k.asmus@test.com',
+        userPassword: process.env.PERMISET_USER_PASSWORD || '123456'
     };
 
     test.beforeAll(async ({ browser }) => {
@@ -14,7 +15,7 @@ test.describe('PermiSET Navigation', () => {
         await context.clearCookies();
         page = await context.newPage();
         await page.goto(`${clientURL}/auth/login`);
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(testTimeout);
         // Authorization
         await page.getByLabel('Email').fill(authData.userEmail);
         await page.getByLabel('Password').fill(authData.userPassword);
@@ -22,12 +23,12 @@ test.describe('PermiSET Navigation', () => {
     });
 
     test('Go to homepage', async () => {
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(testTimeout);
         await expect(page).toHaveURL(`${clientURL}`);
     });
 
     test('left navigation', async () => {
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(testTimeout);
         await page.getByRole('button', { name: 'Dashboard' }).click();
         await expect(page).toHaveURL(`${clientURL}/dashboard`);
         await page.getByRole('button', { name: 'Users' }).click();

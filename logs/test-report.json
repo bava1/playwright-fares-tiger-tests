@@ -1,10 +1,10 @@
 {
-  "stats": {
-    "total": 13,
-    "passed": 5,
-    "failed": 5,
-    "skipped": 3,
-    "duration": 20057
+  "config": {
+    "metadata": {
+      "platform": "win32",
+      "projectName": "Playwright Tests",
+      "timestamp": "2025-04-03T13:24:12.642Z"
+    }
   },
   "suites": [
     {
@@ -24,32 +24,31 @@
       "retry": 0
     },
     {
-      "id": "examples\\example.spec.ts:example test",
-      "title": "example test",
+      "id": "examples\\example.spec.ts:test started link",
+      "title": "test started link",
       "specs": [],
-      "status": "failed",
-      "duration": 456,
-      "error": {
-        "message": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv8888888888888888/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.deg456789gv8888888888888888/\", waiting until \"load\"\u001b[22m\n",
-        "stack": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playwright.deg456789gv8888888888888888/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.deg456789gv8888888888888888/\", waiting until \"load\"\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:4:14"
-      },
-      "retry": 0,
-      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-example-test-chromium\\test-failed-1.png"
+      "status": "passed",
+      "duration": 1169,
+      "retry": 0
     },
     {
       "id": "examples\\example.spec.ts:example test 2",
       "title": "example test 2",
       "specs": [],
       "status": "passed",
-      "duration": 735,
+      "duration": 1027,
       "retry": 0
     },
     {
-      "id": "examples\\example.spec.ts:test started link",
-      "title": "test started link",
+      "id": "examples\\example.spec.ts:example test",
+      "title": "example test",
       "specs": [],
-      "status": "passed",
-      "duration": 1068,
+      "status": "failed",
+      "duration": 4837,
+      "error": {
+        "message": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playw123456789/\nCall log:\n\u001b[2m  - navigating to \"https://playw123456789/\", waiting until \"load\"\u001b[22m\n",
+        "stack": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://playw123456789/\nCall log:\n\u001b[2m  - navigating to \"https://playw123456789/\", waiting until \"load\"\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:4:14"
+      },
       "retry": 0
     },
     {
@@ -65,15 +64,19 @@
       "title": "Go to homepage",
       "specs": [],
       "status": "passed",
-      "duration": 2019,
+      "duration": 2022,
       "retry": 0
     },
     {
-      "id": "PermiSET Navigation:Go logout",
-      "title": "Go logout",
+      "id": "examples\\example.spec.ts:test fasfasf get 3",
+      "title": "test fasfasf get 3",
       "specs": [],
-      "status": "passed",
-      "duration": 1922,
+      "status": "failed",
+      "duration": 5621,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:28:71"
+      },
       "retry": 0
     },
     {
@@ -81,46 +84,39 @@
       "title": "get test started link 39 adfagfsadgsadg ",
       "specs": [],
       "status": "failed",
-      "duration": 5819,
+      "duration": 5630,
       "error": {
         "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n",
         "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:34:66"
       },
-      "retry": 0,
-      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-get-test-started-link-39-adfagfsadgsadg--chromium\\test-failed-1.png"
-    },
-    {
-      "id": "examples\\example.spec.ts:test fasfasf get 3",
-      "title": "test fasfasf get 3",
-      "specs": [],
-      "status": "failed",
-      "duration": 5747,
-      "error": {
-        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
-        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:28:71"
-      },
-      "retry": 0,
-      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-test-fasfasf-get-3-chromium\\test-failed-1.png"
+      "retry": 0
     },
     {
       "id": "examples\\example.spec.ts:test prooo  link 2",
       "title": "test prooo  link 2",
       "specs": [],
       "status": "failed",
-      "duration": 6191,
+      "duration": 5672,
       "error": {
         "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n",
         "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:40:78"
       },
-      "retry": 0,
-      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\examples-example-test-prooo-link-2-chromium\\test-failed-1.png"
+      "retry": 0
     },
     {
       "id": "PermiSET Navigation:left navigation",
       "title": "left navigation",
       "specs": [],
       "status": "passed",
-      "duration": 3325,
+      "duration": 3343,
+      "retry": 0
+    },
+    {
+      "id": "PermiSET Navigation:Go logout",
+      "title": "Go logout",
+      "specs": [],
+      "status": "passed",
+      "duration": 1411,
       "retry": 0
     },
     {
@@ -128,13 +124,19 @@
       "title": "right navigation",
       "specs": [],
       "status": "failed",
-      "duration": 15061,
+      "duration": 15012,
       "error": {
         "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n",
-        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:48:64"
+        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:49:64"
       },
-      "retry": 0,
-      "screenshot": "C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\test-results\\permiset-navigation-PermiSET-Navigation-right-navigation-chromium\\test-failed-1.png"
+      "retry": 0
     }
-  ]
+  ],
+  "summary": {
+    "total": 13,
+    "passed": 5,
+    "failed": 5,
+    "skipped": 3,
+    "duration": 20200
+  }
 }

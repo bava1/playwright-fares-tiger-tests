@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('example test', async ({ page }) => {
-  await page.goto('https://playwright.deg456789gv8888888888888888');
+  await page.goto('https://playw123456789');
   await expect(page).toHaveTitle(/Playwright/);
 });
 

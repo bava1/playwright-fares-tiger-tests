@@ -24,10 +24,10 @@ export default defineConfig({
   ],
   
   use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
-    video: 'on-first-retry',
-    screenshot: 'only-on-failure',
+    // baseURL: 'http://localhost:3000',
+    // trace: 'on-first-retry',
+    // video: 'on-first-retry',
+    // screenshot: 'only-on-failure',
     
     // Navigation waits for load, network, etc. events to complete
     navigationTimeout: 30000,
@@ -52,5 +52,8 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] }
     }
-  ]
+  ],
+
+  // Disable test-results directory
+  outputDir: 'playwright-report'
 });
