@@ -2,8 +2,7 @@
 setlocal EnableDelayedExpansion
 
 :: Setup paths and variables
-set "PROJECT_ROOT=C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests"
-set "LOG_DIR=%PROJECT_ROOT%\logs"
+set "LOG_DIR=logs"
 set "LOG_FILE=%LOG_DIR%\test-run-%date:~-4,4%%date:~-10,2%%date:~-7,2%.log"
 set "ERROR_COUNT=0"
 
@@ -28,14 +27,6 @@ if %errorlevel% neq 0 (
 where pnpm >nul 2>nul
 if %errorlevel% neq 0 (
     call :log "ERROR: pnpm is not installed"
-    set /a ERROR_COUNT+=1
-    goto :error
-)
-
-:: Change to project directory
-cd /d "%PROJECT_ROOT%"
-if %errorlevel% neq 0 (
-    call :log "ERROR: Failed to change to project directory"
     set /a ERROR_COUNT+=1
     goto :error
 )
@@ -75,7 +66,7 @@ if %errorlevel% neq 0 (
 )
 
 :: Check if reports exist
-if not exist "logs\test-report.json" (
+if not exist "%LOG_DIR%\test-report.json" (
     call :log "ERROR: Test report was not created"
     set /a ERROR_COUNT+=1
     goto :error

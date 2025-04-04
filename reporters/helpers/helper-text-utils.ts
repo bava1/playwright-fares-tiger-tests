@@ -6,7 +6,8 @@ const DEFAULT_EMOJI_SET: EmojiMap = {
   skipped: '⏭️',
   timedOut: '⏰',
   interrupted: '⚠️',
-  unknown: '❓'
+  unknown: '❓',
+  flaky: '🔄'
 };
 
 export function getStatusEmoji(status: TestStatus): string {

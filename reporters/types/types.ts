@@ -1,4 +1,4 @@
-export type TestStatus = 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted' | 'unknown';
+export type TestStatus = 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted' | 'unknown' | 'flaky';
 
 export interface EmojiSet {
   passed: string;
@@ -7,6 +7,7 @@ export interface EmojiSet {
   timedOut: string;
   interrupted: string;
   unknown: string;
+  flaky: string;
 }
 
 export interface EmojiMap {
@@ -57,6 +58,7 @@ export interface TestSummary {
   passed: number;
   failed: number;
   skipped: number;
+  flaky: number;
   duration: number;
 }
 
@@ -66,6 +68,7 @@ export interface TestResultData {
   error?: TestError;
   retry?: number;
   screenshot?: string;
+  testId: string;
 }
 
 export interface TestReportData {

@@ -71,6 +71,7 @@ export function generateTextReport(options: TextTemplateOptions): string {
   report += `Total: ${summary.total}\n`;
   report += `Passed: ${summary.passed}\n`;
   report += `Failed: ${summary.failed}\n`;
+  report += `Flaky: ${summary.flaky}\n`;
   report += `Skipped: ${summary.skipped}\n`;
   report += `Duration: ${(duration / 1000).toFixed(2)}s\n\n`;
 
@@ -99,6 +100,9 @@ export function generateTextReport(options: TextTemplateOptions): string {
         
         report += `${status} ${testName}\n`;
         report += `Status: ${result.status}\n`;
+        if (result.status === 'flaky') {
+          report += `Retry Count: ${result.retry || 1}\n`;
+        }
         report += `Duration: ${(result.duration / 1000).toFixed(2)}s\n`;
 
         if (options.includeErrors && result.error) {

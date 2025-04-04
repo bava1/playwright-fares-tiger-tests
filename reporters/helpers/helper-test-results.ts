@@ -25,6 +25,7 @@ export function createTestResultsManager(callbacks: {
       passed: 0,
       failed: 0,
       skipped: 0,
+      flaky: 0,
       duration: 0
     },
     results: new Map(),
@@ -43,17 +44,37 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
   return {
     processTestResult(testResult: ExtendedTestResult, test: TestCase): TestResultData {
       const testId = `${test.parent.title}:${test.title}`;
+      
+      // Определяем статус теста
+      let status: TestStatus;
+      if (testResult.status === 'passed' && testResult.retry && testResult.retry > 0) {
+        status = 'flaky';
+      } else if (testResult.status === 'passed') {
+        status = 'passed';
+      } else if (testResult.status === 'skipped') {
+        status = 'skipped';
+      } else {
+        status = 'failed';
+      }
+      
       const result: TestResultData = {
-        status: testResult.status as TestStatus,
+        status,
         duration: testResult.duration,
         error: testResult.error ? {
           message: testResult.error.message,
           stack: testResult.error.stack
         } : undefined,
         retry: testResult.retry,
-        screenshot: testResult.screenshot
+        screenshot: testResult.screenshot,
+        testId
       };
 
+      // Увеличиваем общий счетчик только для уникальных тестов
+      if (!manager.testResults.has(testId)) {
+        manager.summary.total++;
+      }
+
+      // Сохраняем результат теста
       manager.results.set(testId, testResult);
       manager.testCases.set(testId, test);
       manager.testResults.set(testId, result);
@@ -61,22 +82,22 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
       return result;
     },
     updateSummary(result: TestResultData): void {
-      manager.summary.total++;
-      switch (result.status) {
-        case 'passed':
+      // Обновляем статистику в зависимости от статуса
+      if (result.status === 'passed') {
+        if (result.retry && result.retry > 0) {
+          // Если тест прошел после повторной попытки, уменьшаем failed и увеличиваем flaky
+          manager.summary.failed--;
+          manager.summary.flaky++;
+        } else {
           manager.summary.passed++;
-          break;
-        case 'failed':
+        }
+      } else if (result.status === 'failed') {
+        // Увеличиваем счетчик failed только если это первая попытка
+        if (!result.retry || result.retry === 0) {
           manager.summary.failed++;
-          break;
-        case 'skipped':
-          manager.summary.skipped++;
-          break;
-        case 'timedOut':
-        case 'interrupted':
-        case 'unknown':
-          manager.summary.failed++;
-          break;
+        }
+      } else if (result.status === 'skipped') {
+        manager.summary.skipped++;
       }
     },
     updateTestCategories(test: TestCase): void {

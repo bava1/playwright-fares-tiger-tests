@@ -12,7 +12,9 @@ export default defineConfig({
   timeout: 20000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  // retries: process.env.CI ? 2 : 0,
+
+  retries: 3,
   // workers: 4,
   // workers: process.env.CI ? 1 : undefined,
   // workers: cpuCount,
@@ -54,6 +56,6 @@ export default defineConfig({
     }
   ],
 
-  // Disable test-results directory
-  outputDir: 'playwright-report'
+  // Disable HTML report
+  outputDir: 'html-report'
 });
