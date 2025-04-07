@@ -2,6 +2,7 @@ export const htmlTemplate = (summary: {
   passed: number;
   failed: number;
   skipped: number;
+  flaky: number;
   duration: number;
 }, testCategories: Map<string, string[]>, testResults: Map<string, {
   status: string;
@@ -75,6 +76,7 @@ export const htmlTemplate = (summary: {
       .summary-card.failed { border-top: 5px solid #f44336; }
       .summary-card.skipped { border-top: 5px solid #ff9800; }
       .summary-card.time { border-top: 5px solid #2196F3; }
+      .summary-card.flaky { border-top: 5px solid #666; }
       
       .category {
         margin: 25px 0 55px 0;
@@ -105,6 +107,8 @@ export const htmlTemplate = (summary: {
       .test-item.passed { background-color: #f1f8e9; }
       .test-item.failed { background-color: #ffebee; }
       .test-item.skipped { background-color: #fff3e0; }
+      .test-item.flaky { background-color: #f2f5f7; }
+      
       .test-header {
         display: flex;
         justify-content: space-between;
@@ -125,7 +129,9 @@ export const htmlTemplate = (summary: {
       }
       .test-status.passed { background-color: #4CAF50; color: white; }
       .test-status.failed { background-color: #f44336; color: white; }
-      .test-status.skipped { background-color: #ff9800; color: white; }
+      .test-status.skipped { background-color: #ff9800; color: white; }      
+      .test-status.flaky { background-color: #666; color: white; }
+
       .test-duration {
         color: #666;
         font-size: 0.9em;
@@ -190,6 +196,10 @@ export const htmlTemplate = (summary: {
       <div class="summary-card skipped">
         <h4>Skipped</h4>
         <p><span class="emoji">⏩</span> ${summary.skipped}</p>
+      </div>
+            <div class="summary-card flaky">
+        <h4>Flaky</h4>
+        <p><span class="emoji">🔄</span> ${summary.flaky}</p>
       </div>
       <div class="summary-card time">
         <h4>Duration</h4>

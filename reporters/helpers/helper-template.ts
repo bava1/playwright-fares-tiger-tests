@@ -49,7 +49,9 @@ export function generateHtmlReport(options: TemplateOptions): string {
       passed: summary.passed,
       failed: summary.failed,
       skipped: summary.skipped,
+      flaky: summary.flaky,
       duration
+
     },
     testCategories,
     testResults
@@ -65,7 +67,7 @@ export function generateTextReport(options: TextTemplateOptions): string {
   const { results, summary, title = 'Test Report', timestamp = new Date().toISOString() } = options;
 
   const duration = options.endTime - options.startTime;
-  let report = 'Test Report\n';
+  let report = `${title}\n`;
   report += `Generated on: ${new Date().toLocaleString()}\n\n`;
   report += `Summary:\n`;
   report += `Total: ${summary.total}\n`;
@@ -79,8 +81,7 @@ export function generateTextReport(options: TextTemplateOptions): string {
     report += 'Test Details\n';
     report += '═'.repeat(80) + '\n\n';
 
-    // Group tests by categories
-    const categories = new Map<string, Array<{ id: string; result: any }>>();
+    const categories = new Map<string, Array<{ id: string; result: TestResultData }>>();
     for (const [testId, result] of results.entries()) {
       const [category] = testId.split(':');
       if (!categories.has(category)) {
@@ -89,7 +90,6 @@ export function generateTextReport(options: TextTemplateOptions): string {
       categories.get(category)?.push({ id: testId, result });
     }
 
-    // Output tests by categories
     categories.forEach((tests, category) => {
       report += `📁 ${category}\n`;
       report += '─'.repeat(80) + '\n\n';
@@ -97,12 +97,16 @@ export function generateTextReport(options: TextTemplateOptions): string {
       tests.forEach(({ id, result }) => {
         const testName = id.split(':')[1] || 'Unknown Test';
         const status = getStatusEmoji(result.status as TestStatus);
-        
+
         report += `${status} ${testName}\n`;
         report += `Status: ${result.status}\n`;
+
+        // 💡 Добавляем информацию для flaky
         if (result.status === 'flaky') {
-          report += `Retry Count: ${result.retry || 1}\n`;
+          report += `Flaky: true\n`;
+          report += `Retry Count: ${result.retry ?? 1}\n`;
         }
+
         report += `Duration: ${(result.duration / 1000).toFixed(2)}s\n`;
 
         if (options.includeErrors && result.error) {
@@ -120,4 +124,4 @@ export function generateTextReport(options: TextTemplateOptions): string {
   }
 
   return report;
-} 
+}

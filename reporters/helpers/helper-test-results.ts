@@ -44,7 +44,7 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
   return {
     processTestResult(testResult: ExtendedTestResult, test: TestCase): TestResultData {
       const testId = `${test.parent.title}:${test.title}`;
-      
+
       // Определяем статус теста
       let status: TestStatus;
       if (testResult.status === 'passed' && testResult.retry && testResult.retry > 0) {
@@ -56,12 +56,12 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
       } else {
         status = 'failed';
       }
-      
+
       const result: TestResultData = {
         status,
         duration: testResult.duration,
         error: testResult.error ? {
-          message: testResult.error.message,
+          message: testResult.error.message ?? 'Unknown error',
           stack: testResult.error.stack
         } : undefined,
         retry: testResult.retry,
@@ -81,25 +81,12 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
 
       return result;
     },
-    updateSummary(result: TestResultData): void {
-      // Обновляем статистику в зависимости от статуса
-      if (result.status === 'passed') {
-        if (result.retry && result.retry > 0) {
-          // Если тест прошел после повторной попытки, уменьшаем failed и увеличиваем flaky
-          manager.summary.failed--;
-          manager.summary.flaky++;
-        } else {
-          manager.summary.passed++;
-        }
-      } else if (result.status === 'failed') {
-        // Увеличиваем счетчик failed только если это первая попытка
-        if (!result.retry || result.retry === 0) {
-          manager.summary.failed++;
-        }
-      } else if (result.status === 'skipped') {
-        manager.summary.skipped++;
-      }
+
+    // Убираем updateSummary, так как сводку будем пересчитывать в finalizeTestResults()
+    updateSummary(_result: TestResultData): void {
+      // Пустая функция, чтобы не дублировать подсчет.
     },
+
     updateTestCategories(test: TestCase): void {
       const category = test.parent.title;
       if (!manager.testCategories.has(category)) {
@@ -125,15 +112,40 @@ export function processTestResults(
 ): void {
   const processor = createTestResultProcessor(manager);
   const processedResult = processor.processTestResult(testResult, test);
+  // updateSummary теперь не делает подсчет, чтобы не было повторов
   processor.updateSummary(processedResult);
   processor.updateTestCategories(test);
 }
 
 /**
- * Finalizes test results processing
+ * Finalizes test results processing and пересчитывает сводную статистику
  * @param manager Test results manager
  */
 export function finalizeTestResults(manager: TestResultsManager): void {
   manager.hasEnded = true;
   manager.summary.duration = Date.now() - manager.startTime;
-} 
+
+  // Сбрасываем предыдущие данные сводки
+  manager.summary.passed = 0;
+  manager.summary.failed = 0;
+  manager.summary.skipped = 0;
+  manager.summary.flaky = 0;
+
+  // Пересчитываем сводку по всем результатам
+  for (const result of manager.testResults.values()) {
+    switch (result.status) {
+      case 'passed':
+        manager.summary.passed++;
+        break;
+      case 'failed':
+        manager.summary.failed++;
+        break;
+      case 'skipped':
+        manager.summary.skipped++;
+        break;
+      case 'flaky':
+        manager.summary.flaky++;
+        break;
+    }
+  }
+}

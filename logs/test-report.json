@@ -3,7 +3,7 @@
     "metadata": {
       "platform": "win32",
       "projectName": "Playwright Tests",
-      "timestamp": "2025-04-04T14:39:52.692Z"
+      "timestamp": "2025-04-07T14:54:46.284Z"
     }
   },
   "suites": [
@@ -17,38 +17,20 @@
       "testId": "examples\\example.spec.ts:test get started link 45"
     },
     {
-      "id": "examples\\example.spec.ts:get started link 5",
-      "title": "get started link 5",
+      "id": "examples\\example.spec.ts:flaky test example",
+      "title": "flaky test example",
       "specs": [],
-      "status": "skipped",
-      "duration": 0,
-      "retry": 0,
-      "testId": "examples\\example.spec.ts:get started link 5"
-    },
-    {
-      "id": "examples\\example.spec.ts:test started link",
-      "title": "test started link",
-      "specs": [],
-      "status": "passed",
-      "duration": 866,
-      "retry": 0,
-      "testId": "examples\\example.spec.ts:test started link"
-    },
-    {
-      "id": "examples\\example.spec.ts:example test 2",
-      "title": "example test 2",
-      "specs": [],
-      "status": "passed",
-      "duration": 850,
-      "retry": 0,
-      "testId": "examples\\example.spec.ts:example test 2"
+      "status": "flaky",
+      "duration": 12,
+      "retry": 3,
+      "testId": "examples\\example.spec.ts:flaky test example"
     },
     {
       "id": "examples\\example.spec.ts:example test",
       "title": "example test",
       "specs": [],
       "status": "failed",
-      "duration": 2186,
+      "duration": 2252,
       "error": {
         "message": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/\nCall log:\n\u001b[2m  - navigating to \"https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/\", waiting until \"load\"\u001b[22m\n",
         "stack": "Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/\nCall log:\n\u001b[2m  - navigating to \"https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/\", waiting until \"load\"\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:4:14"
@@ -57,100 +39,69 @@
       "testId": "examples\\example.spec.ts:example test"
     },
     {
-      "id": "PermiSET Navigation:Go to homepage",
-      "title": "Go to homepage",
+      "id": "examples\\example.spec.ts:example test 2",
+      "title": "example test 2",
       "specs": [],
       "status": "passed",
-      "duration": 2034,
+      "duration": 3844,
       "retry": 0,
-      "testId": "PermiSET Navigation:Go to homepage"
+      "testId": "examples\\example.spec.ts:example test 2"
     },
     {
-      "id": "PermiSET Navigation:skippp   right navigation",
-      "title": "skippp   right navigation",
+      "id": "examples\\example.spec.ts:test started link",
+      "title": "test started link",
       "specs": [],
-      "status": "skipped",
-      "duration": 0,
+      "status": "passed",
+      "duration": 4042,
       "retry": 0,
-      "testId": "PermiSET Navigation:skippp   right navigation"
-    },
-    {
-      "id": "examples\\example.spec.ts:get test started link 39 adfagfsadgsadg ",
-      "title": "get test started link 39 adfagfsadgsadg ",
-      "specs": [],
-      "status": "failed",
-      "duration": 5474,
-      "error": {
-        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n",
-        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Igggggnst' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Igggggnst' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:34:66"
-      },
-      "retry": 3,
-      "testId": "examples\\example.spec.ts:get test started link 39 adfagfsadgsadg "
-    },
-    {
-      "id": "examples\\example.spec.ts:test fasfasf get 3",
-      "title": "test fasfasf get 3",
-      "specs": [],
-      "status": "failed",
-      "duration": 5510,
-      "error": {
-        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
-        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:28:71"
-      },
-      "retry": 3,
-      "testId": "examples\\example.spec.ts:test fasfasf get 3"
+      "testId": "examples\\example.spec.ts:test started link"
     },
     {
       "id": "examples\\example.spec.ts:test prooo  link 2",
       "title": "test prooo  link 2",
       "specs": [],
       "status": "failed",
-      "duration": 5507,
+      "duration": 5621,
       "error": {
         "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n",
-        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:40:78"
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Isdsssssssnstallation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:42:78"
       },
       "retry": 3,
       "testId": "examples\\example.spec.ts:test prooo  link 2"
     },
     {
-      "id": "PermiSET Navigation:left navigation",
-      "title": "left navigation",
-      "specs": [],
-      "status": "passed",
-      "duration": 3480,
-      "retry": 0,
-      "testId": "PermiSET Navigation:left navigation"
-    },
-    {
-      "id": "PermiSET Navigation:Go logout",
-      "title": "Go logout",
-      "specs": [],
-      "status": "passed",
-      "duration": 898,
-      "retry": 0,
-      "testId": "PermiSET Navigation:Go logout"
-    },
-    {
-      "id": "PermiSET Navigation:right navigation",
-      "title": "right navigation",
+      "id": "tiger\\booking.spec.ts:Booking Folder test",
+      "title": "Booking Folder test",
       "specs": [],
       "status": "failed",
-      "duration": 15019,
+      "duration": 5544,
       "error": {
-        "message": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n",
-        "stack": "TimeoutError: locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Sethgtings' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\permiset\\navigation.spec.ts:49:64"
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\tiger\\booking.spec.ts:6:71"
       },
       "retry": 3,
-      "testId": "PermiSET Navigation:right navigation"
+      "testId": "tiger\\booking.spec.ts:Booking Folder test"
+    },
+    {
+      "id": "examples\\example.spec.ts:test fasfasf get 3",
+      "title": "test fasfasf get 3",
+      "specs": [],
+      "status": "failed",
+      "duration": 5516,
+      "error": {
+        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n",
+        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('heading', { name: 'Instaffllation' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Instaffllation' })\u001b[22m\n\n    at C:\\BAVA\\Tiger\\Playwright\\playwright-fares-tiger-tests\\tests\\examples\\example.spec.ts:29:71"
+      },
+      "retry": 3,
+      "testId": "examples\\example.spec.ts:test fasfasf get 3"
     }
   ],
   "summary": {
-    "total": 13,
-    "passed": 5,
-    "failed": 5,
-    "skipped": 3,
-    "flaky": 0,
-    "duration": 74922
+    "total": 8,
+    "passed": 2,
+    "failed": 4,
+    "skipped": 1,
+    "flaky": 1,
+    "duration": 32147
   }
 }

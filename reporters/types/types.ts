@@ -1,3 +1,5 @@
+import type { TestCase, TestResult as PlaywrightTestResult } from '@playwright/test/reporter';
+
 export type TestStatus = 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted' | 'unknown' | 'flaky';
 
 export interface EmojiSet {
@@ -65,8 +67,12 @@ export interface TestSummary {
 export interface TestResultData {
   status: TestStatus;
   duration: number;
-  error?: TestError;
+  error?: {
+    message: string;
+    stack?: string;
+  };
   retry?: number;
+  retries?: number;
   screenshot?: string;
   testId: string;
 }
@@ -99,6 +105,34 @@ export interface TextTemplateOptions extends TestReportData {
   title?: string;
   timestamp?: string;
   includeDetails?: boolean;
+  includeErrors?: boolean;
+  includeScreenshots?: boolean;
+}
+
+export interface ExtendedTestResult extends Omit<PlaywrightTestResult, 'status' | 'retry'> {
+  screenshot?: string;
+  retry?: number;
+  retries?: number;
+  status: TestStatus;
+}
+
+export interface TestResultsManager {
+  startTime: number;
+  hasEnded: boolean;
+  summary: TestSummary;
+  results: Map<string, ExtendedTestResult>;
+  testCases: Map<string, TestCase>;
+  testResults: Map<string, TestResultData>;
+  testCategories: Map<string, string[]>;
+}
+
+export interface TestResultProcessor {
+  processTestResult(testResult: ExtendedTestResult, test: TestCase): TestResultData;
+  updateSummary(result: TestResultData): void;
+  updateTestCategories(test: TestCase): void;
+}
+
+export interface TestResultsOptions {
   includeErrors?: boolean;
   includeScreenshots?: boolean;
 } 

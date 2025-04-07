@@ -10,6 +10,7 @@ test('example test 2', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);
 });
 
+
 test.skip('test get started link 45', async ({ page }) => {
   await page.goto('https://playwright.dev');
   await page.getByRole('link', { name: 'Get started' }).click();
@@ -27,21 +28,32 @@ test('test fasfasf get 3', async ({ page }) => {
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
 });
-
+/*
 test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
   await page.goto('https://playwright.dev');
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
 });
+*/
 
 test('test prooo  link 2', async ({ page }) => {
   await page.goto('https://playwright.dev');
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
 });
-
+/*
 test.skip('get started link 5', async ({ page }) => {
   await page.goto('https://playwright.dev');
   await page.getByRole('link', { name: 'Get started' }).click();
   await expect(page.getByRole('heading', { name: 'Inqwion' })).toBeVisible();
+});
+*/
+
+test('flaky test example', async () => {
+  const random = Math.random();
+
+  console.log(`Random value: ${random}`);
+
+  // Тест упадёт, если случайное число меньше 0.5 (примерно в 50% случаев)
+  expect(random).toBeGreaterThan(0.5);
 });

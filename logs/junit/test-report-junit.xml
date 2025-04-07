@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="13" failures="5" skipped="3" errors="0" time="74.901846">
-<testsuite name="examples\example.spec.ts" timestamp="2025-04-04T14:38:37.791Z" hostname="chromium" tests="8" failures="4" skipped="2" time="77.804" errors="0">
-<testcase name="example test" classname="examples\example.spec.ts" time="9.18">
+<testsuites id="" name="" tests="8" failures="4" skipped="1" errors="0" time="32.122634999999995">
+<testsuite name="examples\example.spec.ts" timestamp="2025-04-07T14:54:14.170Z" hostname="chromium" tests="7" failures="3" skipped="1" time="69.939" errors="0">
+<testcase name="example test" classname="examples\example.spec.ts" time="9.197">
 <failure message="example.spec.ts:3:5 example test" type="FAILURE">
 <![CDATA[  [chromium] › examples\example.spec.ts:3:5 › example test ─────────────────────────────────────────
 
@@ -68,7 +68,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="example test 2" classname="examples\example.spec.ts" time="0.85">
+<testcase name="example test 2" classname="examples\example.spec.ts" time="3.844">
 </testcase>
 <testcase name="test get started link 45" classname="examples\example.spec.ts" time="0">
 <properties>
@@ -78,11 +78,11 @@
 <skipped>
 </skipped>
 </testcase>
-<testcase name="test started link" classname="examples\example.spec.ts" time="0.866">
+<testcase name="test started link" classname="examples\example.spec.ts" time="4.042">
 </testcase>
-<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="22.312">
-<failure message="example.spec.ts:25:5 test fasfasf get 3" type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:25:5 › test fasfasf get 3 ──────────────────────────────────
+<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="26.865">
+<failure message="example.spec.ts:26:5 test fasfasf get 3" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:26:5 › test fasfasf get 3 ──────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
@@ -94,14 +94,14 @@
       - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      26 |   await page.goto('https://playwright.dev');
-      27 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 28 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+      27 |   await page.goto('https://playwright.dev');
+      28 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
          |                                                                       ^
-      29 | });
-      30 |
-      31 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:28:71
+      30 | });
+      31 | /*
+      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
 
     Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -115,14 +115,14 @@
       - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      26 |   await page.goto('https://playwright.dev');
-      27 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 28 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+      27 |   await page.goto('https://playwright.dev');
+      28 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
          |                                                                       ^
-      29 | });
-      30 |
-      31 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:28:71
+      30 | });
+      31 | /*
+      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
 
     Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -136,14 +136,14 @@
       - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      26 |   await page.goto('https://playwright.dev');
-      27 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 28 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+      27 |   await page.goto('https://playwright.dev');
+      28 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
          |                                                                       ^
-      29 | });
-      30 |
-      31 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:28:71
+      30 | });
+      31 | /*
+      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
 
     Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -157,108 +157,20 @@
       - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      26 |   await page.goto('https://playwright.dev');
-      27 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 28 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+      27 |   await page.goto('https://playwright.dev');
+      28 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
          |                                                                       ^
-      29 | });
-      30 |
-      31 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:28:71
+      30 | });
+      31 | /*
+      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
 ]]>
 </failure>
 </testcase>
-<testcase name="get test started link 39 adfagfsadgsadg " classname="examples\example.spec.ts" time="22.256">
-<failure message="example.spec.ts:31:5 get test started link 39 adfagfsadgsadg " type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:31:5 › get test started link 39 adfagfsadgsadg  ────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Igggggnst' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Igggggnst' })
-
-
-      32 |   await page.goto('https://playwright.dev');
-      33 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 34 |   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
-         |                                                                  ^
-      35 | });
-      36 |
-      37 | test('test prooo  link 2', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:34:66
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Igggggnst' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Igggggnst' })
-
-
-      32 |   await page.goto('https://playwright.dev');
-      33 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 34 |   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
-         |                                                                  ^
-      35 | });
-      36 |
-      37 | test('test prooo  link 2', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:34:66
-
-    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Igggggnst' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Igggggnst' })
-
-
-      32 |   await page.goto('https://playwright.dev');
-      33 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 34 |   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
-         |                                                                  ^
-      35 | });
-      36 |
-      37 | test('test prooo  link 2', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:34:66
-
-    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Igggggnst' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Igggggnst' })
-
-
-      32 |   await page.goto('https://playwright.dev');
-      33 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 34 |   await expect(page.getByRole('heading', { name: 'Igggggnst' })).toBeVisible();
-         |                                                                  ^
-      35 | });
-      36 |
-      37 | test('test prooo  link 2', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:34:66
-]]>
-</failure>
-</testcase>
-<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="22.34">
-<failure message="example.spec.ts:37:5 test prooo  link 2" type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:37:5 › test prooo  link 2 ──────────────────────────────────
+<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="25.923">
+<failure message="example.spec.ts:39:5 test prooo  link 2" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:39:5 › test prooo  link 2 ──────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
@@ -270,14 +182,14 @@
       - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
 
 
-      38 |   await page.goto('https://playwright.dev');
-      39 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 40 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
+      40 |   await page.goto('https://playwright.dev');
+      41 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
          |                                                                              ^
-      41 | });
-      42 |
-      43 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:40:78
+      43 | });
+      44 | /*
+      45 | test.skip('get started link 5', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
 
     Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -291,14 +203,14 @@
       - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
 
 
-      38 |   await page.goto('https://playwright.dev');
-      39 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 40 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
+      40 |   await page.goto('https://playwright.dev');
+      41 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
          |                                                                              ^
-      41 | });
-      42 |
-      43 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:40:78
+      43 | });
+      44 | /*
+      45 | test.skip('get started link 5', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
 
     Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -312,14 +224,14 @@
       - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
 
 
-      38 |   await page.goto('https://playwright.dev');
-      39 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 40 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
+      40 |   await page.goto('https://playwright.dev');
+      41 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
          |                                                                              ^
-      41 | });
-      42 |
-      43 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:40:78
+      43 | });
+      44 | /*
+      45 | test.skip('get started link 5', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
 
     Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -333,108 +245,107 @@
       - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
 
 
-      38 |   await page.goto('https://playwright.dev');
-      39 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 40 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
+      40 |   await page.goto('https://playwright.dev');
+      41 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
          |                                                                              ^
-      41 | });
-      42 |
-      43 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:40:78
+      43 | });
+      44 | /*
+      45 | test.skip('get started link 5', async ({ page }) => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
 ]]>
 </failure>
 </testcase>
-<testcase name="get started link 5" classname="examples\example.spec.ts" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
+<testcase name="flaky test example" classname="examples\example.spec.ts" time="0.068">
+<system-out>
+<![CDATA[Random value: 0.01611254027183251
+Random value: 0.21336143114388717
+Random value: 0.3126435056732906
+Random value: 0.8743307157665747
+]]>
+</system-out>
 </testcase>
 </testsuite>
-<testsuite name="permiset\navigation.spec.ts" timestamp="2025-04-04T14:38:37.791Z" hostname="chromium" tests="5" failures="1" skipped="1" time="66.474" errors="0">
-<testcase name="PermiSET Navigation › Go to homepage" classname="permiset\navigation.spec.ts" time="2.034">
-</testcase>
-<testcase name="PermiSET Navigation › left navigation" classname="permiset\navigation.spec.ts" time="3.48">
-</testcase>
-<testcase name="PermiSET Navigation › right navigation" classname="permiset\navigation.spec.ts" time="60.062">
-<failure message="navigation.spec.ts:48:9 right navigation" type="FAILURE">
-<![CDATA[  [chromium] › permiset\navigation.spec.ts:48:9 › PermiSET Navigation › right navigation ───────────
+<testsuite name="tiger\booking.spec.ts" timestamp="2025-04-07T14:54:14.170Z" hostname="chromium" tests="1" failures="1" skipped="0" time="26.108" errors="0">
+<testcase name="Booking Folder test" classname="tiger\booking.spec.ts" time="26.108">
+<failure message="booking.spec.ts:3:5 Booking Folder test" type="FAILURE">
+<![CDATA[  [chromium] › tiger\booking.spec.ts:3:5 › Booking Folder test ─────────────────────────────────────
 
-    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
     Call log:
-      - waiting for getByRole('button', { name: 'Sethgtings' })
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      47 |
-      48 |     test('right navigation', async () => {
-    > 49 |         await page.getByRole('button', { name: 'Sethgtings' }).click();
-         |                                                                ^
-      50 |         await expect(page).toHaveURL(`${clientURL}/setting`);
-      51 |     });
-      52 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:49:64
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
 
     Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
 
-    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
     Call log:
-      - waiting for getByRole('button', { name: 'Sethgtings' })
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      47 |
-      48 |     test('right navigation', async () => {
-    > 49 |         await page.getByRole('button', { name: 'Sethgtings' }).click();
-         |                                                                ^
-      50 |         await expect(page).toHaveURL(`${clientURL}/setting`);
-      51 |     });
-      52 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:49:64
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
 
     Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
 
-    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
     Call log:
-      - waiting for getByRole('button', { name: 'Sethgtings' })
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      47 |
-      48 |     test('right navigation', async () => {
-    > 49 |         await page.getByRole('button', { name: 'Sethgtings' }).click();
-         |                                                                ^
-      50 |         await expect(page).toHaveURL(`${clientURL}/setting`);
-      51 |     });
-      52 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:49:64
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
 
     Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
 
-    TimeoutError: locator.click: Timeout 15000ms exceeded.
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
     Call log:
-      - waiting for getByRole('button', { name: 'Sethgtings' })
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
 
 
-      47 |
-      48 |     test('right navigation', async () => {
-    > 49 |         await page.getByRole('button', { name: 'Sethgtings' }).click();
-         |                                                                ^
-      50 |         await expect(page).toHaveURL(`${clientURL}/setting`);
-      51 |     });
-      52 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\permiset\navigation.spec.ts:49:64
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
 ]]>
 </failure>
-</testcase>
-<testcase name="PermiSET Navigation › skippp   right navigation" classname="permiset\navigation.spec.ts" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="PermiSET Navigation › Go logout" classname="permiset\navigation.spec.ts" time="0.898">
 </testcase>
 </testsuite>
 </testsuites>
