@@ -3,7 +3,8 @@ import { getStatusEmoji } from './helper-text-utils';
 import { cleanErrorMessage } from './helper-text-utils';
 import { TemplateOptions, TextTemplateOptions } from '../types/types';
 import { TestStatus } from '../types/types';
-import { TestResultData } from '../types/types';
+import { TestResultData } from '../types/types'
+import stripAnsi from 'strip-ansi';;
 
 /**
  * Generates an HTML report from test results
@@ -50,6 +51,7 @@ export function generateHtmlReport(options: TemplateOptions): string {
       failed: summary.failed,
       skipped: summary.skipped,
       flaky: summary.flaky,
+      total: summary.total,
       duration
 
     },
@@ -110,7 +112,8 @@ export function generateTextReport(options: TextTemplateOptions): string {
         report += `Duration: ${(result.duration / 1000).toFixed(2)}s\n`;
 
         if (options.includeErrors && result.error) {
-          report += `Error: ${cleanErrorMessage(result.error.message || 'Unknown error')}\n`;
+          const cleanedMessage = stripAnsi(result.error.message || 'Unknown error');
+          report += `Error: ${cleanedMessage}\n`;
         }
 
         if (options.includeScreenshots && result.screenshot) {

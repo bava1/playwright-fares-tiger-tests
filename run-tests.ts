@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { EmailService } from './reporters/email/email-service';
-import { loadEmailConfig } from './reporters/email/email-config';
+import { EmailService } from './senders/email/email-service';
+import { loadEmailConfig } from './senders/email/email-config';
 import path from 'path';
 import fs from 'fs/promises';
 

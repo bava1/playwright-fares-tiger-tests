@@ -1,6 +1,105 @@
-<testsuites id="" name="" tests="8" failures="4" skipped="1" errors="0" time="32.122634999999995">
-<testsuite name="examples\example.spec.ts" timestamp="2025-04-07T14:54:14.170Z" hostname="chromium" tests="7" failures="3" skipped="1" time="69.939" errors="0">
-<testcase name="example test" classname="examples\example.spec.ts" time="9.197">
+<testsuites id="" name="" tests="13" failures="5" skipped="1" errors="0" time="30.788625">
+<testsuite name="booking\booking.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="3" failures="1" skipped="0" time="28.221" errors="0">
+<testcase name="Booking Folder test" classname="booking\booking.spec.ts" time="25.012">
+<failure message="booking.spec.ts:3:5 Booking Folder test" type="FAILURE">
+<![CDATA[  [chromium] › booking\booking.spec.ts:3:5 › Booking Folder test ───────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
+
+
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+      8 |
+      9 | test('Booking flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
+
+
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+      8 |
+      9 | test('Booking flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
+
+
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+      8 |
+      9 | test('Booking flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - expect.toBeVisible with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Instaffllation' })
+
+
+      4 |   await page.goto('https://playwright.dev');
+      5 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
+        |                                                                       ^
+      7 | });
+      8 |
+      9 | test('Booking flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
+]]>
+</failure>
+</testcase>
+<testcase name="Booking flaky test " classname="booking\booking.spec.ts" time="0.032">
+<system-out>
+<![CDATA[Random value 2: 0.32966733074114285
+Random value 2: 0.7718358548962803
+]]>
+</system-out>
+</testcase>
+<testcase name="Booking proo test" classname="booking\booking.spec.ts" time="3.177">
+</testcase>
+</testsuite>
+<testsuite name="examples\example.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="7" failures="3" skipped="1" time="66.451" errors="0">
+<testcase name="example test" classname="examples\example.spec.ts" time="11.275">
 <failure message="example.spec.ts:3:5 example test" type="FAILURE">
 <![CDATA[  [chromium] › examples\example.spec.ts:3:5 › example test ─────────────────────────────────────────
 
@@ -68,7 +167,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="example test 2" classname="examples\example.spec.ts" time="3.844">
+<testcase name="example test 2" classname="examples\example.spec.ts" time="3.025">
 </testcase>
 <testcase name="test get started link 45" classname="examples\example.spec.ts" time="0">
 <properties>
@@ -78,9 +177,9 @@
 <skipped>
 </skipped>
 </testcase>
-<testcase name="test started link" classname="examples\example.spec.ts" time="4.042">
+<testcase name="test started link" classname="examples\example.spec.ts" time="3.466">
 </testcase>
-<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="26.865">
+<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="24.605">
 <failure message="example.spec.ts:26:5 test fasfasf get 3" type="FAILURE">
 <![CDATA[  [chromium] › examples\example.spec.ts:26:5 › test fasfasf get 3 ──────────────────────────────────
 
@@ -168,7 +267,7 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="25.923">
+<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="24.069">
 <failure message="example.spec.ts:39:5 test prooo  link 2" type="FAILURE">
 <![CDATA[  [chromium] › examples\example.spec.ts:39:5 › test prooo  link 2 ──────────────────────────────────
 
@@ -256,20 +355,17 @@
 ]]>
 </failure>
 </testcase>
-<testcase name="flaky test example" classname="examples\example.spec.ts" time="0.068">
+<testcase name="Example flaky test " classname="examples\example.spec.ts" time="0.011">
 <system-out>
-<![CDATA[Random value: 0.01611254027183251
-Random value: 0.21336143114388717
-Random value: 0.3126435056732906
-Random value: 0.8743307157665747
+<![CDATA[Random value 1: 0.9037945085308363
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="tiger\booking.spec.ts" timestamp="2025-04-07T14:54:14.170Z" hostname="chromium" tests="1" failures="1" skipped="0" time="26.108" errors="0">
-<testcase name="Booking Folder test" classname="tiger\booking.spec.ts" time="26.108">
-<failure message="booking.spec.ts:3:5 Booking Folder test" type="FAILURE">
-<![CDATA[  [chromium] › tiger\booking.spec.ts:3:5 › Booking Folder test ─────────────────────────────────────
+<testsuite name="tiger\tiger-search.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="3" failures="1" skipped="0" time="22.753" errors="0">
+<testcase name="Tiger Folder test" classname="tiger\tiger-search.spec.ts" time="22.136">
+<failure message="tiger-search.spec.ts:3:5 Tiger Folder test" type="FAILURE">
+<![CDATA[  [chromium] › tiger\tiger-search.spec.ts:3:5 › Tiger Folder test ──────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
@@ -286,7 +382,9 @@ Random value: 0.8743307157665747
     > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
         |                                                                       ^
       7 | });
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
+      8 |
+      9 | test('Tiger flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
 
     Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -305,7 +403,9 @@ Random value: 0.8743307157665747
     > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
         |                                                                       ^
       7 | });
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
+      8 |
+      9 | test('Tiger flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
 
     Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -324,7 +424,9 @@ Random value: 0.8743307157665747
     > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
         |                                                                       ^
       7 | });
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
+      8 |
+      9 | test('Tiger flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
 
     Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
 
@@ -343,9 +445,20 @@ Random value: 0.8743307157665747
     > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
         |                                                                       ^
       7 | });
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\booking.spec.ts:6:71
+      8 |
+      9 | test('Tiger flaky test ', async () => {
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
 ]]>
 </failure>
+</testcase>
+<testcase name="Tiger flaky test " classname="tiger\tiger-search.spec.ts" time="0.021">
+<system-out>
+<![CDATA[Random value 2: 0.18512603285329554
+Random value 2: 0.6722601464442224
+]]>
+</system-out>
+</testcase>
+<testcase name="Tiger proo test" classname="tiger\tiger-search.spec.ts" time="0.596">
 </testcase>
 </testsuite>
 </testsuites>

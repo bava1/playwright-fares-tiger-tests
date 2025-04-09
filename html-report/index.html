@@ -51,11 +51,12 @@
         text-align: center;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       }
+      .summary-card.total { border-top: 5px solid #91098d; }
       .summary-card.passed { border-top: 5px solid #4CAF50; }
       .summary-card.failed { border-top: 5px solid #f44336; }
       .summary-card.skipped { border-top: 5px solid #ff9800; }
       .summary-card.time { border-top: 5px solid #2196F3; }
-      .summary-card.flaky { border-top: 5px solid #666; }
+      .summary-card.flaky { border-top: 5px solid #8f8f8f; }
       
       .category {
         margin: 25px 0 55px 0;
@@ -109,7 +110,7 @@
       .test-status.passed { background-color: #4CAF50; color: white; }
       .test-status.failed { background-color: #f44336; color: white; }
       .test-status.skipped { background-color: #ff9800; color: white; }      
-      .test-status.flaky { background-color: #666; color: white; }
+      .test-status.flaky { background-color: #8f8f8f; color: white; }
 
       .test-duration {
         color: #666;
@@ -152,37 +153,41 @@
         text-decoration: underline;
       }
       .emoji {
-        font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         font-size: 1em;
       }
     </style>
   </head>
   <body>
     <div class="header">
-      <h1>Test Report</h1>
-      <p>Generated on: 7. 4. 2025 16:54:46</p>
+      <h2>Test Report</h2>
+      <h3>Generated on: 9. 4. 2025 14:16:45</h3>
     </div>
 
     <div class="summary">
+      <div class="summary-card time">
+        <h4>Duration</h4>
+        <p><span class="emoji">⏱️</span> 30.84s</p>
+      </div>
+      <div class="summary-card total">
+        <h4>Total</h4>
+        <p><span class="emoji">⏳</span> 13</p>
+      </div>
       <div class="summary-card passed">
         <h4>Passed</h4>
-        <p><span class="emoji">✅</span> 2</p>
+        <p><span class="emoji">✅</span> 5</p>
       </div>
       <div class="summary-card failed">
         <h4>Failed</h4>
-        <p><span class="emoji">❌</span> 4</p>
+        <p><span class="emoji">❌</span> 5</p>
       </div>
       <div class="summary-card skipped">
         <h4>Skipped</h4>
         <p><span class="emoji">⏩</span> 1</p>
       </div>
-            <div class="summary-card flaky">
+      <div class="summary-card flaky">
         <h4>Flaky</h4>
-        <p><span class="emoji">🔄</span> 1</p>
-      </div>
-      <div class="summary-card time">
-        <h4>Duration</h4>
-        <p><span class="emoji">⏱️</span> 32.15s</p>
+        <p><span style="color: #8f8f8f; font-size: 1em">⏹️</span> 2</p>
       </div>
     </div>
 
@@ -203,37 +208,6 @@
                 
               </li>
             
-              <li class="test-item flaky">
-                <div class="test-header">
-                  <div class="test-title">flaky test example</div>
-                  <div class="test-status flaky">
-                     FLAKY
-                  </div>
-                </div>
-                <div class="test-duration"><span class="emoji">🔄</span> Duration: 0.01s</div>
-                
-                
-              </li>
-            
-              <li class="test-item failed">
-                <div class="test-header">
-                  <div class="test-title">example test</div>
-                  <div class="test-status failed">
-                     FAILED
-                  </div>
-                </div>
-                <div class="test-duration"><span class="emoji">❌</span> Duration: 2.25s</div>
-                
-                
-                  <div class="test-error">
-                    <pre><span class="emoji">❌</span> Error: Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
-Call log:
-  - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
-</pre>
-                  </div>
-                
-              </li>
-            
               <li class="test-item passed">
                 <div class="test-header">
                   <div class="test-title">example test 2</div>
@@ -241,7 +215,19 @@ Call log:
                      PASSED
                   </div>
                 </div>
-                <div class="test-duration"><span class="emoji">✅</span> Duration: 3.84s</div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 3.02s</div>
+                
+                
+              </li>
+            
+              <li class="test-item passed">
+                <div class="test-header">
+                  <div class="test-title">Example flaky test </div>
+                  <div class="test-status passed">
+                     PASSED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 0.01s</div>
                 
                 
               </li>
@@ -253,8 +239,27 @@ Call log:
                      PASSED
                   </div>
                 </div>
-                <div class="test-duration"><span class="emoji">✅</span> Duration: 4.04s</div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 3.47s</div>
                 
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">example test</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 2.23s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
+Call log:
+  - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
+</pre>
+                  </div>
                 
               </li>
             
@@ -289,7 +294,7 @@ Call log:
                      FAILED
                   </div>
                 </div>
-                <div class="test-duration"><span class="emoji">❌</span> Duration: 5.52s</div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 5.55s</div>
                 
                 
                   <div class="test-error">
@@ -310,9 +315,33 @@ Call log:
       </div>
     
       <div class="category">
-        <div class="category-header"><span class="emoji">📁</span> tiger\booking.spec.ts</div>
+        <div class="category-header"><span class="emoji">📁</span> booking\booking.spec.ts</div>
         <ul class="test-list">
           
+              <li class="test-item flaky">
+                <div class="test-header">
+                  <div class="test-title">Booking flaky test </div>
+                  <div class="test-status flaky">
+                     FLAKY
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">⏹️</span> Duration: 0.01s</div>
+                
+                
+              </li>
+            
+              <li class="test-item passed">
+                <div class="test-header">
+                  <div class="test-title">Booking proo test</div>
+                  <div class="test-status passed">
+                     PASSED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 3.18s</div>
+                
+                
+              </li>
+            
               <li class="test-item failed">
                 <div class="test-header">
                   <div class="test-title">Booking Folder test</div>
@@ -320,7 +349,62 @@ Call log:
                      FAILED
                   </div>
                 </div>
-                <div class="test-duration"><span class="emoji">❌</span> Duration: 5.54s</div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 5.62s</div>
+                
+                
+                  <div class="test-error">
+                    <pre><span class="emoji">❌</span> Error: Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByRole('heading', { name: 'Instaffllation' })
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for getByRole('heading', { name: 'Instaffllation' })
+</pre>
+                  </div>
+                
+              </li>
+            
+        </ul>
+      </div>
+    
+      <div class="category">
+        <div class="category-header"><span class="emoji">📁</span> tiger\tiger-search.spec.ts</div>
+        <ul class="test-list">
+          
+              <li class="test-item flaky">
+                <div class="test-header">
+                  <div class="test-title">Tiger flaky test </div>
+                  <div class="test-status flaky">
+                     FLAKY
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">⏹️</span> Duration: 0.01s</div>
+                
+                
+              </li>
+            
+              <li class="test-item passed">
+                <div class="test-header">
+                  <div class="test-title">Tiger proo test</div>
+                  <div class="test-status passed">
+                     PASSED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">✅</span> Duration: 0.60s</div>
+                
+                
+              </li>
+            
+              <li class="test-item failed">
+                <div class="test-header">
+                  <div class="test-title">Tiger Folder test</div>
+                  <div class="test-status failed">
+                     FAILED
+                  </div>
+                </div>
+                <div class="test-duration"><span class="emoji">❌</span> Duration: 5.53s</div>
                 
                 
                   <div class="test-error">
@@ -352,10 +436,10 @@ Call log:
         const pieChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['2 Passed', '4 Failed', '1 Skipped'],
+            labels: ['5 Passed', '5 Failed', '1 Skipped', '2 Flaky'],
             datasets: [{
-              data: [ 2, 4, 1],
-              backgroundColor: ['#4CAF50', '#f44336', '#ff9800']
+              data: [ 5, 5, 1, 2],
+              backgroundColor: ['#4CAF50', '#f44336', '#ff9800','#8f8f8f']
             }]
           },
           options: {

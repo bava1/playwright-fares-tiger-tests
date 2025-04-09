@@ -49,11 +49,9 @@ test.skip('get started link 5', async ({ page }) => {
 });
 */
 
-test('flaky test example', async () => {
+test('Example flaky test ', async () => {
   const random = Math.random();
 
-  console.log(`Random value: ${random}`);
-
-  // Тест упадёт, если случайное число меньше 0.5 (примерно в 50% случаев)
+  console.log(`Random value 1: ${random}`);
   expect(random).toBeGreaterThan(0.5);
 });

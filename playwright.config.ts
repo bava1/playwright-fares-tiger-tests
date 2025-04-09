@@ -1,11 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
 // import os from 'os';
-
 // const cpuCount = os.cpus().length;
 
-// console.log(`🧠 Доступно логических ядер: ${cpuCount}`);
-// console.log(`🛠️  Playwright, скорее всего, будет использовать ${cpuCount} воркеров (если ты не в CI)`);
+// console.log(`🧠 Logical cores available: ${cpuCount}`);
+// console.log(`🛠️ Playwright will likely use ${cpuCount} workers (unless you're in CI) `);
 
 export default defineConfig({
   testDir: './tests',
@@ -20,6 +19,7 @@ export default defineConfig({
   // workers: cpuCount,
   reporter: [
     ['line'],
+    ['html', { open: 'always' }],
     ['json', { outputFile: 'logs/test-report.json' }],
     ['junit', { outputFile: 'logs/junit/test-report-junit.xml' }],
     [path.resolve(__dirname, 'reporters/generators/generator-test-report.ts')]

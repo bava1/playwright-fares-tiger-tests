@@ -45,7 +45,6 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
     processTestResult(testResult: ExtendedTestResult, test: TestCase): TestResultData {
       const testId = `${test.parent.title}:${test.title}`;
 
-      // Определяем статус теста
       let status: TestStatus;
       if (testResult.status === 'passed' && testResult.retry && testResult.retry > 0) {
         status = 'flaky';
@@ -69,12 +68,12 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
         testId
       };
 
-      // Увеличиваем общий счетчик только для уникальных тестов
+      // We increase the total count only for unique tests
       if (!manager.testResults.has(testId)) {
         manager.summary.total++;
       }
 
-      // Сохраняем результат теста
+      // We save the test result
       manager.results.set(testId, testResult);
       manager.testCases.set(testId, test);
       manager.testResults.set(testId, result);
@@ -82,9 +81,9 @@ function createTestResultProcessor(manager: TestResultsManager): TestResultProce
       return result;
     },
 
-    // Убираем updateSummary, так как сводку будем пересчитывать в finalizeTestResults()
+    // Убираем updateSummary, so that the summary will be read in finalizeTestResults()
     updateSummary(_result: TestResultData): void {
-      // Пустая функция, чтобы не дублировать подсчет.
+
     },
 
     updateTestCategories(test: TestCase): void {
@@ -112,7 +111,7 @@ export function processTestResults(
 ): void {
   const processor = createTestResultProcessor(manager);
   const processedResult = processor.processTestResult(testResult, test);
-  // updateSummary теперь не делает подсчет, чтобы не было повторов
+  // updateSummary now doesn't do the calculation so that it doesn't repeat
   processor.updateSummary(processedResult);
   processor.updateTestCategories(test);
 }
@@ -125,13 +124,13 @@ export function finalizeTestResults(manager: TestResultsManager): void {
   manager.hasEnded = true;
   manager.summary.duration = Date.now() - manager.startTime;
 
-  // Сбрасываем предыдущие данные сводки
+
   manager.summary.passed = 0;
   manager.summary.failed = 0;
   manager.summary.skipped = 0;
   manager.summary.flaky = 0;
 
-  // Пересчитываем сводку по всем результатам
+  // We read the summary of all results
   for (const result of manager.testResults.values()) {
     switch (result.status) {
       case 'passed':
