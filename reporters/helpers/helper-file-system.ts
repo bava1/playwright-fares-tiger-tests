@@ -1,16 +1,17 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { LOG_PATH } from '../config/paths';
+import { LOGS_DIR } from '../config/paths';
 
 /**
  * Creates a directory if it doesn't exist
- * @param path Directory path
+ * Supports recursive directory creation
+ * @param dirPath - Path to the directory
  * @returns Result of the operation
  */
-export function createDirectory(path: string): { success: boolean; error?: string } {
+export function createDirectory(dirPath: string): { success: boolean; error?: string } {
   try {
-    if (!fs.existsSync(path)) {
-      fs.mkdirSync(path, { recursive: true });
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true }); // Create all necessary directories
     }
     return { success: true };
   } catch (error) {
@@ -20,6 +21,8 @@ export function createDirectory(path: string): { success: boolean; error?: strin
     };
   }
 }
+
+
 
 /**
  * Deletes a file if it exists
@@ -41,19 +44,17 @@ export function deleteFile(path: string): { success: boolean; error?: string } {
 }
 
 /**
- * Writes data to a file
- * @param path File path
- * @param data Data to write
+ * Writes data to a file, creating the directory if necessary
+ * @param filePath - Full path to the file
+ * @param data - String data to write into the file
  * @returns Result of the operation
  */
-export function writeFile(path: string, data: string): { success: boolean; error?: string } {
+export function writeFile(filePath: string, data: string): { success: boolean; error?: string } {
   try {
-    // Create directory for the file if it doesn't exist
-    const dir = path.substring(0, path.lastIndexOf('/'));
-    if (dir) {
-      createDirectory(dir);
-    }
-    fs.writeFileSync(path, data, 'utf8');
+    const dir = path.dirname(filePath); // Get directory part of the file path
+    createDirectory(dir);               // Ensure directory exists
+
+    fs.writeFileSync(filePath, data, 'utf8'); // Write file content
     return { success: true };
   } catch (error) {
     return {
@@ -63,13 +64,14 @@ export function writeFile(path: string, data: string): { success: boolean; error
   }
 }
 
+
 /**
  * Initializes report directories
  * @returns Array of results for each directory creation
  */
 export function initializeReportDirectories(): Array<{ success: boolean; error?: string }> {
   const dirs = [
-    { path: path.dirname(LOG_PATH) }  // Create logs directory
+    { path: path.dirname(LOGS_DIR) }  // Create logs directory
   ];
 
   const results = [];

@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
+import * as dotenv from 'dotenv';
+dotenv.config();
 // import os from 'os';
 // const cpuCount = os.cpus().length;
 
@@ -19,8 +21,8 @@ export default defineConfig({
   // workers: cpuCount,
   reporter: [
     ['line'],
-    ['html', { open: 'always' }],
-    ['json', { outputFile: 'logs/test-report.json' }],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'logs/json/test-report.json' }],
     ['junit', { outputFile: 'logs/junit/test-report-junit.xml' }],
     [path.resolve(__dirname, 'reporters/generators/generator-test-report.ts')]
   ],

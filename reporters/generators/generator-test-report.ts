@@ -1,10 +1,11 @@
 import { Reporter, TestCase, TestResult as PlaywrightTestResult, FullResult } from '@playwright/test/reporter';
 import { PlaywrightReport } from '../types/types';
-import { PARSED_LOG_PATH, HTML_REPORT_PATH, LOG_PATH } from '../config/paths';
+import { HTML_REPORT_PATH, JSON_REPORT_PATH, TXT_REPORT_PATH } from '../config/paths';
 import { deleteFile, writeFile, initializeReportDirectories } from '../helpers/helper-file-system';
 import { generateHtmlReport, generateTextReport } from '../helpers/helper-template';
 import { createTestResultsManager, processTestResults, finalizeTestResults } from '../helpers/helper-test-results';
 import { TestResultsManager } from '../types/test-results.types';
+import { getTimestampedTxtPath } from '../config/get-timestamped-txt-path';
 
 type PlaywrightTestStatus = 'passed' | 'failed' | 'timedOut' | 'skipped' | 'interrupted';
 type FullResultStatus = 'passed' | 'failed' | 'interrupted' | 'timedout';
@@ -32,7 +33,7 @@ class EnhancedReporter implements Reporter {
       }
 
       // Delete old parsed-log.txt file
-      const deleteResult = deleteFile(PARSED_LOG_PATH);
+      const deleteResult = deleteFile(TXT_REPORT_PATH);
       if (!deleteResult.success) {
         console.warn('Could not delete old parsed log file:', deleteResult.error);
       }
@@ -64,8 +65,9 @@ class EnhancedReporter implements Reporter {
   }
 
   async onEnd(result: FullResult): Promise<void> {
+    const timestampedTxtPath = getTimestampedTxtPath();
+
     try {
-      console.log('Test run finished, generating reports...');
       finalizeTestResults(this.manager);
 
       // Generate text report
@@ -79,12 +81,12 @@ class EnhancedReporter implements Reporter {
         includeErrors: true,
         includeScreenshots: true
       });
-
-      const textReportResult = writeFile(PARSED_LOG_PATH, textReport);
+      // console.log('TXT_REPORT_PATH:', TXT_REPORT_PATH);
+      // console.log('Text report preview:\n', textReport.slice(0, 300));
+      const textReportResult = writeFile(timestampedTxtPath, textReport);
       if (!textReportResult.success) {
         console.error('Error writing text report:', textReportResult.error);
       }
-
       // Generate HTML report
       const htmlReport = generateHtmlReport({
         summary: this.manager.summary,
@@ -117,7 +119,7 @@ class EnhancedReporter implements Reporter {
         summary: this.manager.summary
       };
 
-      const rawDataResult = writeFile(LOG_PATH, JSON.stringify(rawData, null, 2));
+      const rawDataResult = writeFile(JSON_REPORT_PATH, JSON.stringify(rawData, null, 2));
       if (!rawDataResult.success) {
         console.error('Error writing raw data:', rawDataResult.error);
       }

@@ -1,175 +1,8 @@
-<testsuites id="" name="" tests="13" failures="5" skipped="1" errors="0" time="30.788625">
-<testsuite name="booking\booking.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="3" failures="1" skipped="0" time="28.221" errors="0">
-<testcase name="Booking Folder test" classname="booking\booking.spec.ts" time="25.012">
-<failure message="booking.spec.ts:3:5 Booking Folder test" type="FAILURE">
-<![CDATA[  [chromium] › booking\booking.spec.ts:3:5 › Booking Folder test ───────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Booking flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Booking flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
-
-    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Booking flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
-
-    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Booking flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\booking\booking.spec.ts:6:71
-]]>
-</failure>
+<testsuites id="" name="" tests="5" failures="1" skipped="1" errors="0" time="26.998967">
+<testsuite name="examples\example.spec.ts" timestamp="2025-04-11T13:53:41.575Z" hostname="chromium" tests="4" failures="1" skipped="1" time="27.198" errors="0">
+<testcase name="example passed test 2" classname="examples\example.spec.ts" time="2.819">
 </testcase>
-<testcase name="Booking flaky test " classname="booking\booking.spec.ts" time="0.032">
-<system-out>
-<![CDATA[Random value 2: 0.32966733074114285
-Random value 2: 0.7718358548962803
-]]>
-</system-out>
-</testcase>
-<testcase name="Booking proo test" classname="booking\booking.spec.ts" time="3.177">
-</testcase>
-</testsuite>
-<testsuite name="examples\example.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="7" failures="3" skipped="1" time="66.451" errors="0">
-<testcase name="example test" classname="examples\example.spec.ts" time="11.275">
-<failure message="example.spec.ts:3:5 example test" type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:3:5 › example test ─────────────────────────────────────────
-
-    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
-    Call log:
-      - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
-
-
-      2 |
-      3 | test('example test', async ({ page }) => {
-    > 4 |   await page.goto('https://plaAAAAAAAAAAAAAAAAAAAAAAAAA');
-        |              ^
-      5 |   await expect(page).toHaveTitle(/Playwright/);
-      6 | });
-      7 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:4:14
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
-    Call log:
-      - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
-
-
-      2 |
-      3 | test('example test', async ({ page }) => {
-    > 4 |   await page.goto('https://plaAAAAAAAAAAAAAAAAAAAAAAAAA');
-        |              ^
-      5 |   await expect(page).toHaveTitle(/Playwright/);
-      6 | });
-      7 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:4:14
-
-    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
-    Call log:
-      - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
-
-
-      2 |
-      3 | test('example test', async ({ page }) => {
-    > 4 |   await page.goto('https://plaAAAAAAAAAAAAAAAAAAAAAAAAA');
-        |              ^
-      5 |   await expect(page).toHaveTitle(/Playwright/);
-      6 | });
-      7 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:4:14
-
-    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/
-    Call log:
-      - navigating to "https://plaaaaaaaaaaaaaaaaaaaaaaaaaa/", waiting until "load"
-
-
-      2 |
-      3 | test('example test', async ({ page }) => {
-    > 4 |   await page.goto('https://plaAAAAAAAAAAAAAAAAAAAAAAAAA');
-        |              ^
-      5 |   await expect(page).toHaveTitle(/Playwright/);
-      6 | });
-      7 |
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:4:14
-]]>
-</failure>
-</testcase>
-<testcase name="example test 2" classname="examples\example.spec.ts" time="3.025">
-</testcase>
-<testcase name="test get started link 45" classname="examples\example.spec.ts" time="0">
+<testcase name="example skip failed test 2" classname="examples\example.spec.ts" time="0">
 <properties>
 <property name="skip" value="">
 </property>
@@ -177,288 +10,112 @@ Random value 2: 0.7718358548962803
 <skipped>
 </skipped>
 </testcase>
-<testcase name="test started link" classname="examples\example.spec.ts" time="3.466">
-</testcase>
-<testcase name="test fasfasf get 3" classname="examples\example.spec.ts" time="24.605">
-<failure message="example.spec.ts:26:5 test fasfasf get 3" type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:26:5 › test fasfasf get 3 ──────────────────────────────────
+<testcase name="example failed test" classname="examples\example.spec.ts" time="24.343">
+<failure message="example.spec.ts:16:5 example failed test" type="FAILURE">
+<![CDATA[  [chromium] › examples\example.spec.ts:16:5 › example failed test ─────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
-    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Locator: getByRole('heading', { name: 'Instaffllagjfsjtion' })
     Expected: visible
     Received: <element(s) not found>
     Call log:
       - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
+      - waiting for getByRole('heading', { name: 'Instaffllagjfsjtion' })
 
 
-      27 |   await page.goto('https://playwright.dev');
-      28 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-         |                                                                       ^
-      30 | });
-      31 | /*
-      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
+      17 |   await page.goto('https://playwright.dev');
+      18 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 19 |   await expect(page.getByRole('heading', { name: 'Instaffllagjfsjtion' })).toBeVisible();
+         |                                                                            ^
+      20 | });
+      21 |
+      22 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:19:76
 
     Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
-    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Locator: getByRole('heading', { name: 'Instaffllagjfsjtion' })
     Expected: visible
     Received: <element(s) not found>
     Call log:
       - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
+      - waiting for getByRole('heading', { name: 'Instaffllagjfsjtion' })
 
 
-      27 |   await page.goto('https://playwright.dev');
-      28 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-         |                                                                       ^
-      30 | });
-      31 | /*
-      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
+      17 |   await page.goto('https://playwright.dev');
+      18 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 19 |   await expect(page.getByRole('heading', { name: 'Instaffllagjfsjtion' })).toBeVisible();
+         |                                                                            ^
+      20 | });
+      21 |
+      22 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:19:76
 
     Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
-    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Locator: getByRole('heading', { name: 'Instaffllagjfsjtion' })
     Expected: visible
     Received: <element(s) not found>
     Call log:
       - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
+      - waiting for getByRole('heading', { name: 'Instaffllagjfsjtion' })
 
 
-      27 |   await page.goto('https://playwright.dev');
-      28 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-         |                                                                       ^
-      30 | });
-      31 | /*
-      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
+      17 |   await page.goto('https://playwright.dev');
+      18 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 19 |   await expect(page.getByRole('heading', { name: 'Instaffllagjfsjtion' })).toBeVisible();
+         |                                                                            ^
+      20 | });
+      21 |
+      22 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:19:76
 
     Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
 
     Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
 
-    Locator: getByRole('heading', { name: 'Instaffllation' })
+    Locator: getByRole('heading', { name: 'Instaffllagjfsjtion' })
     Expected: visible
     Received: <element(s) not found>
     Call log:
       - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
+      - waiting for getByRole('heading', { name: 'Instaffllagjfsjtion' })
 
 
-      27 |   await page.goto('https://playwright.dev');
-      28 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 29 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-         |                                                                       ^
-      30 | });
-      31 | /*
-      32 | test('get test started link 39 adfagfsadgsadg ', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:29:71
+      17 |   await page.goto('https://playwright.dev');
+      18 |   await page.getByRole('link', { name: 'Get started' }).click();
+    > 19 |   await expect(page.getByRole('heading', { name: 'Instaffllagjfsjtion' })).toBeVisible();
+         |                                                                            ^
+      20 | });
+      21 |
+      22 |
+        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:19:76
 ]]>
 </failure>
 </testcase>
-<testcase name="test prooo  link 2" classname="examples\example.spec.ts" time="24.069">
-<failure message="example.spec.ts:39:5 test prooo  link 2" type="FAILURE">
-<![CDATA[  [chromium] › examples\example.spec.ts:39:5 › test prooo  link 2 ──────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
-
-
-      40 |   await page.goto('https://playwright.dev');
-      41 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
-         |                                                                              ^
-      43 | });
-      44 | /*
-      45 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
-
-
-      40 |   await page.goto('https://playwright.dev');
-      41 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
-         |                                                                              ^
-      43 | });
-      44 | /*
-      45 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
-
-    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
-
-
-      40 |   await page.goto('https://playwright.dev');
-      41 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
-         |                                                                              ^
-      43 | });
-      44 | /*
-      45 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
-
-    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Isdsssssssnstallation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Isdsssssssnstallation' })
-
-
-      40 |   await page.goto('https://playwright.dev');
-      41 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 42 |   await expect(page.getByRole('heading', { name: 'Isdsssssssnstallation' })).toBeVisible();
-         |                                                                              ^
-      43 | });
-      44 | /*
-      45 | test.skip('get started link 5', async ({ page }) => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\examples\example.spec.ts:42:78
-]]>
-</failure>
-</testcase>
-<testcase name="Example flaky test " classname="examples\example.spec.ts" time="0.011">
+<testcase name="Example times flaky test " classname="examples\example.spec.ts" time="0.036">
 <system-out>
-<![CDATA[Random value 1: 0.9037945085308363
+<![CDATA[Random value 1: 0.2945327384194687
+Random value 1: 0.04054267177011783
+Random value 1: 0.9130179731989401
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="tiger\tiger-search.spec.ts" timestamp="2025-04-09T12:16:14.390Z" hostname="chromium" tests="3" failures="1" skipped="0" time="22.753" errors="0">
-<testcase name="Tiger Folder test" classname="tiger\tiger-search.spec.ts" time="22.136">
-<failure message="tiger-search.spec.ts:3:5 Tiger Folder test" type="FAILURE">
-<![CDATA[  [chromium] › tiger\tiger-search.spec.ts:3:5 › Tiger Folder test ──────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Tiger flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Tiger flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
-
-    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Tiger flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
-
-    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
-
-    Locator: getByRole('heading', { name: 'Instaffllation' })
-    Expected: visible
-    Received: <element(s) not found>
-    Call log:
-      - expect.toBeVisible with timeout 5000ms
-      - waiting for getByRole('heading', { name: 'Instaffllation' })
-
-
-      4 |   await page.goto('https://playwright.dev');
-      5 |   await page.getByRole('link', { name: 'Get started' }).click();
-    > 6 |   await expect(page.getByRole('heading', { name: 'Instaffllation' })).toBeVisible();
-        |                                                                       ^
-      7 | });
-      8 |
-      9 | test('Tiger flaky test ', async () => {
-        at C:\BAVA\Tiger\Playwright\playwright-fares-tiger-tests\tests\tiger\tiger-search.spec.ts:6:71
-]]>
-</failure>
-</testcase>
-<testcase name="Tiger flaky test " classname="tiger\tiger-search.spec.ts" time="0.021">
+<testsuite name="tiger\search-winter.spec.ts" timestamp="2025-04-11T13:53:41.575Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.855" errors="0">
+<testcase name="Tiger winter search test › Left aside filter" classname="tiger\search-winter.spec.ts" time="12.855">
 <system-out>
-<![CDATA[Random value 2: 0.18512603285329554
-Random value 2: 0.6722601464442224
+<![CDATA[✅ Successfully logged into Production.
+⏳ Loading time: 1.989 seconds
+Total number of hotels: [33m239[39m
+✅ The test was completed successfully.
 ]]>
 </system-out>
-</testcase>
-<testcase name="Tiger proo test" classname="tiger\tiger-search.spec.ts" time="0.596">
 </testcase>
 </testsuite>
 </testsuites>

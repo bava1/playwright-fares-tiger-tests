@@ -30,14 +30,17 @@
     "@playwright/test": "^1.42.1",
     "@types/node": "^20.11.24",
     "@types/nodemailer": "^6.4.14",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "date-fns": "^3.3.1",
+    "eslint": "^8.57.0",
     "nodemailer": "^6.9.9",
     "strip-ansi": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "eslint": "^8.57.0",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1"
+    "typescript": "^5.3.3"
   },
-  "packageManager": "pnpm@8.8.0+sha512.798e6b322669ce63c8da856bd62ad1f7b6f36f4dfaa0ac025af2bdd700d09dd5dca943e5cad3edac5d1b3baebc4b2c3fb80fbb8537f936733c32be2ec7805144"
+  "packageManager": "pnpm@8.8.0+sha512.798e6b322669ce63c8da856bd62ad1f7b6f36f4dfaa0ac025af2bdd700d09dd5dca943e5cad3edac5d1b3baebc4b2c3fb80fbb8537f936733c32be2ec7805144",
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
 }
