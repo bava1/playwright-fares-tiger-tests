@@ -7,8 +7,8 @@ import { clickButtonIfExists } from '../../utils/clickButtonIfExists';
 test.describe('Tiger winter search test', () => {
     test('Left aside filter', async ({ page }) => {
 
-        await page.goto(`https://ube.fischer.cz`);
-        // await page.goto(`http://test-03.ube-test.fischer.cz`);
+        await page.goto(process.env.TIGER_URL_PROD!);
+        // await page.goto(process.env.TIGER_URL_DEV!);
 
         // Authorization
         await loginProd(page, process.env.TEST_USER_EMAIL!, process.env.TEST_USER_PASSWORD!);
